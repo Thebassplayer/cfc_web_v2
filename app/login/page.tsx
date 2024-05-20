@@ -60,11 +60,11 @@ export default function Login({
         <input
           className="mb-6 rounded-md border bg-inherit px-4 py-2"
           name="email"
-          placeholder="you@example.com"
+          placeholder="soy@flexible.com"
           required
         />
         <label className="text-md" htmlFor="password">
-          Password
+          Contraseña
         </label>
         <input
           className="mb-6 rounded-md border bg-inherit px-4 py-2"
@@ -75,17 +75,17 @@ export default function Login({
         />
         <SubmitButton
           formAction={signIn}
-          className="bg-purple-extralight hover:bg-purple-light mb-2 rounded-md px-4 py-2 text-foreground"
-          pendingText="Autentiicando Usuario..."
+          className="bg-purple-extralight hover:ring-purple-extralight mb-2 rounded-md px-4 py-2 text-foreground hover:bg-black hover:text-white hover:ring-2"
+          pendingText="Autenticando tu Usuario..."
         >
-          Sign In
+          Ingresar
         </SubmitButton>
         <SubmitButton
           formAction={signUp}
-          className="mb-2 rounded-md border border-foreground/20 px-4 py-2 text-foreground"
-          pendingText="Autentiicando Usuario..."
+          className="hover:ring-purple-extralight mb-2 rounded-md border border-foreground/20 px-4 py-2 text-foreground hover:bg-black hover:text-white hover:ring-2"
+          pendingText="Registrandote..."
         >
-          Sign Up
+          Registrate
         </SubmitButton>
         {searchParams?.message && (
           <p className="mt-4 bg-foreground/10 p-4 text-center text-foreground">
