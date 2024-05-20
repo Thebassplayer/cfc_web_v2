@@ -76,14 +76,14 @@ export default function Login({
         <SubmitButton
           formAction={signIn}
           className="bg-purple-extralight hover:bg-purple-light mb-2 rounded-md px-4 py-2 text-foreground"
-          pendingText="Signing In..."
+          pendingText="Autentiicando Usuario..."
         >
           Sign In
         </SubmitButton>
         <SubmitButton
           formAction={signUp}
           className="mb-2 rounded-md border border-foreground/20 px-4 py-2 text-foreground"
-          pendingText="Signing Up..."
+          pendingText="Autentiicando Usuario..."
         >
           Sign Up
         </SubmitButton>

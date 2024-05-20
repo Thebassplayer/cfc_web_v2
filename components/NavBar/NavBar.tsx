@@ -33,8 +33,8 @@ const NavBar = ({ className }: NavBarProps) => {
         {NAV_BAR_BUTTONS.map(({ path, text }) => (
           <NavBarButton key={`${path}-${text}`} path={path} text={text} />
         ))}
-        <AuthButton />
       </ul>
+      <AuthButton />
     </nav>
   );
 };

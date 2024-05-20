@@ -1,6 +1,8 @@
+import { cm } from "@/utils/classMerge";
 import { createClient } from "@/utils/supabase/server";
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import Avatar from "./Avatar/Avatar";
 
 export default async function AuthButton() {
   const supabase = createClient();
@@ -19,17 +21,23 @@ export default async function AuthButton() {
 
   return user ? (
     <div className="flex items-center gap-4">
-      Hey, {user.email}!
       <form action={signOut}>
-        <button className="py-2 px-4 rounded-md no-underline bg-btn-background hover:bg-btn-background-hover">
+        <button
+          className={cm(
+            "font-sifonn text-2xl uppercase text-white decoration-2 hover:underline",
+          )}
+        >
           Logout
         </button>
       </form>
+      <Avatar />
     </div>
   ) : (
     <Link
       href="/login"
-      className="py-2 px-3 flex rounded-md no-underline bg-btn-background hover:bg-btn-background-hover"
+      className={cm(
+        "font-sifonn text-2xl uppercase text-white decoration-2 hover:underline",
+      )}
     >
       Login
     </Link>
