@@ -20,7 +20,7 @@ export default async function AuthButton() {
   };
 
   return user ? (
-    <div className="flex items-center gap-4">
+    <div className="flex-ro flex items-center gap-4">
       <form action={signOut}>
         <button
           className={cm(
@@ -30,7 +30,9 @@ export default async function AuthButton() {
           Logout
         </button>
       </form>
-      <Avatar />
+      <Link href={"/dashboard"} className="size-14">
+        <Avatar />
+      </Link>
     </div>
   ) : (
     <Link
