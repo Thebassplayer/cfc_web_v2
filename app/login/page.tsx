@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { SubmitButton } from "../../components/SubmitButton/submit-button";
 import Link from "next/link";
 import FormError from "@/components/FormError/FormError";
+import generateErrorMessageURI from "@/utils/generateErrorMessageURI";
 
 export default function Login({
   searchParams,

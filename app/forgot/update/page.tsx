@@ -2,6 +2,7 @@ import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 import { SubmitButton } from "@/components/SubmitButton/submit-button";
 import FormError from "@/components/FormError/FormError";
+import generateErrorMessageURI from "@/utils/generateErrorMessageURI";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
