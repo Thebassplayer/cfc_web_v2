@@ -1,8 +1,8 @@
-import Link from "next/link";
 import { headers } from "next/headers";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
-import { SubmitButton } from "./submit-button";
+import { SubmitButton } from "../../components/SubmitButton/submit-button";
+import Link from "next/link";
 
 export default function Login({
   searchParams,
@@ -21,8 +21,12 @@ export default function Login({
       password,
     });
 
+    console.log("Error @ SignIn", error);
+
     if (error) {
-      return redirect("/login?message=Could not authenticate user");
+      return redirect(
+        "/login?message=Hubo un error al intentar autenticar tu usuario, intentalo mas tarde",
+      );
     }
 
     return redirect("/dashboard");
@@ -44,16 +48,22 @@ export default function Login({
       },
     });
 
+    console.log("Error @ SignUp", error);
+
     if (error) {
-      return redirect("/login?message=Could not authenticate user");
+      return redirect(
+        "/login?message=Hubo un error al intentar registrarte, intentalo mas tarde",
+      );
     }
 
-    return redirect("/login?message=Check email to continue sign in process");
+    return redirect(
+      "/login?message=Revisa tu correo para continuar con el registro",
+    );
   };
 
   return (
     <div className="m-auto flex h-full w-full flex-1 flex-col items-center justify-center gap-2 px-8 sm:max-w-md">
-      <form className="animate-in flex w-full flex-1 flex-col justify-center gap-2 text-foreground">
+      <form className="animate-in text-foreground flex w-full flex-col justify-center gap-2 rounded-md border p-4">
         <label className="text-md" htmlFor="email">
           Email
         </label>
@@ -75,20 +85,23 @@ export default function Login({
         />
         <SubmitButton
           formAction={signIn}
-          className="bg-purple-extralight hover:ring-purple-extralight mb-2 rounded-md px-4 py-2 text-foreground hover:bg-black hover:text-white hover:ring-2"
+          className="text-foreground mb-2 rounded-md bg-purple-extralight px-4 py-2 hover:bg-black hover:text-white hover:ring-2 hover:ring-purple-extralight"
           pendingText="Autenticando tu Usuario..."
         >
           Ingresar
         </SubmitButton>
         <SubmitButton
           formAction={signUp}
-          className="hover:ring-purple-extralight mb-2 rounded-md border border-foreground/20 px-4 py-2 text-foreground hover:bg-black hover:text-white hover:ring-2"
+          className="border-foreground/20 text-foreground mb-2 rounded-md border px-4 py-2 hover:bg-black hover:text-white hover:ring-2 hover:ring-purple-extralight"
           pendingText="Registrandote..."
         >
           Registrate
         </SubmitButton>
+        <Link className="text-center text-sm hover:underline" href={"/forgot"}>
+          Olvide mi contraseña
+        </Link>
         {searchParams?.message && (
-          <p className="mt-4 bg-foreground/10 p-4 text-center text-foreground">
+          <p className="bg-foreground/10 text-foreground mt-4 rounded-md bg-red-300 p-4 text-center text-sm">
             {searchParams.message}
           </p>
         )}
