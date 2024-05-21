@@ -3,6 +3,7 @@ import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 import { SubmitButton } from "../../components/SubmitButton/submit-button";
 import Link from "next/link";
+import FormError from "@/components/FormError/FormError";
 
 export default function Login({
   searchParams,
@@ -51,14 +52,20 @@ export default function Login({
     console.log("Error @ SignUp", error);
 
     if (error) {
-      return redirect(
-        "/login?message=Hubo un error al intentar registrarte, intentalo mas tarde",
+      const message = generateErrorMessageURI(
+        "Hubo un error al intentar registrarte, intentalo mas tarde",
       );
+      const url = `/login?message=${message}`;
+      return redirect(url);
     }
 
-    return redirect(
-      "/login?message=Revisa tu correo para continuar con el registro",
+    const message = generateErrorMessageURI(
+      "Revisa tu correo para continuar con el registro",
     );
+
+    const url = `/login?message=${message}`;
+
+    return redirect(url);
   };
 
   return (
@@ -100,11 +107,7 @@ export default function Login({
         <Link className="text-center text-sm hover:underline" href={"/forgot"}>
           Olvide mi contraseña
         </Link>
-        {searchParams?.message && (
-          <p className="bg-foreground/10 text-foreground mt-4 rounded-md bg-red-300 p-4 text-center text-sm">
-            {searchParams.message}
-          </p>
-        )}
+        {searchParams?.message && <FormError searchParams={searchParams} />}
       </form>
     </div>
   );

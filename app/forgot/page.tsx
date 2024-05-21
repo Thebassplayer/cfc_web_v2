@@ -1,6 +1,7 @@
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 import { SubmitButton } from "@/components/SubmitButton/submit-button";
+import FormError from "@/components/FormError/FormError";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -23,9 +24,11 @@ export default function Login({
     console.log(data, error);
 
     if (error) {
-      return redirect(
-        "/login?message=Hubo un error al intentar recuperar tu contraseña",
+      const message = generateErrorMessageURI(
+        "Hubo un error al intentar recuperar tu contraseña",
       );
+      const url = `/forgot?message=${message}`;
+      return redirect(url);
     }
 
     return redirect("/forgot/success");
@@ -52,11 +55,7 @@ export default function Login({
           Recuperar Contraseña
         </SubmitButton>
 
-        {searchParams?.message && (
-          <p className="bg-foreground/10 text-foreground mt-4 p-4 text-center">
-            {searchParams.message}
-          </p>
-        )}
+        {searchParams?.message && <FormError searchParams={searchParams} />}
       </form>
     </div>
   );
