@@ -31,6 +31,7 @@ const ContactForm = () => {
           <Field
             name="name"
             type="text"
+            placeholder="Tu nombre"
             className="rounded-md border bg-inherit px-4 py-2"
           />
           <ErrorMessage
@@ -49,6 +50,7 @@ const ContactForm = () => {
           <Field
             name="email"
             type="email"
+            placeholder="soy@flexible.com"
             className="rounded-md border bg-inherit px-4 py-2"
           />
           <ErrorMessage
@@ -67,6 +69,7 @@ const ContactForm = () => {
           <Field
             name="message"
             as="textarea"
+            placeholder="Escribe tu mensaje"
             className="rounded-md border bg-inherit px-4 py-2"
           />
           <ErrorMessage
