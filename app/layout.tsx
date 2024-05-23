@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="es">
       <body className="grid h-screen w-screen grid-rows-[90px_auto]">
         <NavBar className="row-span-1 row-start-1" />
-        <main className="row-span-11 row-start-2 h-full w-full">
+        <main className="row-span-11 row-start-2 h-full w-full overflow-y-scroll">
           {children}
         </main>
       </body>

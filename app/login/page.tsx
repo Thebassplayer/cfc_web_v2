@@ -70,8 +70,11 @@ export default function Login({
   };
 
   return (
-    <div className="m-auto flex h-full w-full flex-1 flex-col items-center justify-center gap-2 px-8 sm:max-w-md">
-      <form className="animate-in text-foreground flex w-full flex-col justify-center gap-2 rounded-md border p-4">
+    <div className="m-auto grid h-full grid-rows-12 gap-2 px-8 sm:max-w-md lg:max-w-2xl">
+      <h1 className="row-span-1 row-start-2 text-center font-sifonn text-4xl">
+        Ingresa a tu panel de usuario!
+      </h1>
+      <form className="animate-in text-foreground row-start-4 flex h-min w-full flex-col justify-center gap-2 rounded-md border p-4">
         <label className="text-md" htmlFor="email">
           Email
         </label>
