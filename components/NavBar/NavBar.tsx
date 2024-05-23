@@ -20,7 +20,7 @@ const NavBar = ({ className }: NavBarProps) => {
   return (
     <nav
       className={cm(
-        "bg-purple-extralight flex h-full w-full flex-row items-center border-b-2 border-black px-28 py-2 shadow-xl",
+        "flex h-full w-full flex-row items-center border-b-2  border-black bg-purple-extralight px-28 py-2 shadow-xl",
         className,
       )}
     >
