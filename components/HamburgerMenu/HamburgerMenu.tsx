@@ -89,7 +89,7 @@ const HamburgerMenu = () => {
           ) : (
             <li>
               <Link href={"/login"} onClick={() => toggleNavMenu()}>
-                Ingresar
+                Iniciar
               </Link>
             </li>
           )}
