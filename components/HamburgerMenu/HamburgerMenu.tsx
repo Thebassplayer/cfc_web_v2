@@ -5,12 +5,9 @@ import { signOut } from "@/utils/authHandlers";
 import { cm } from "@/utils/classMerge";
 import { createClient } from "@/utils/supabase/client";
 import { User } from "@supabase/supabase-js";
+import Link from "next/link";
 
-type HamburgerMenuProps = {
-  color?: "black" | "white";
-};
-
-const HamburgerMenu = ({ color = "white" }: HamburgerMenuProps) => {
+const HamburgerMenu = () => {
   const supabase = createClient();
 
   const [user, setUser] = useState<User | null>(null);
@@ -36,7 +33,7 @@ const HamburgerMenu = ({ color = "white" }: HamburgerMenuProps) => {
   };
 
   const handleLogout = () => {
-    signOut();
+    supabase.auth.signOut();
     setIsOpen(false);
   };
 
@@ -69,32 +66,28 @@ const HamburgerMenu = ({ color = "white" }: HamburgerMenuProps) => {
         <ul
           ref={menuRef}
           className={cm(
-            "absolute right-0 top-10 z-50 mt-2 border-2 shadow-lg",
-            color === "white"
-              ? "border-black bg-white text-black"
-              : "border-white bg-black text-white",
+            "absolute right-0 top-10 z-50 mt-2 flex flex-col gap-4 border-2 bg-white p-4 shadow-lg *:font-roboto *:font-bold",
           )}
         >
-          {user && (
-            <li
-              onClick={handleLogout}
-              className={cm(
-                "cursor-pointer px-4 py-2 text-sm",
-                color === "white"
-                  ? "text-black hover:bg-black hover:text-white"
-                  : "text-white hover:bg-white hover:text-black",
-              )}
-            >
-              Salir
+          <li>
+            <Link href={"/"}>Inicio</Link>
+          </li>
+          <li>
+            <Link href={"/filosofia"}>Filosofia</Link>
+          </li>
+          <li>
+            <Link href={"/contacto"}>Contacto</Link>
+          </li>
+          {user ? (
+            <li onClick={handleLogout}>Salir</li>
+          ) : (
+            <li>
+              <Link href={"/login"}>Ingresar</Link>
             </li>
           )}
         </ul>
       )}
-      <HamburgerButton
-        buttonRef={buttonRef}
-        toggleNavMenu={toggleNavMenu}
-        color={color}
-      />
+      <HamburgerButton buttonRef={buttonRef} toggleNavMenu={toggleNavMenu} />
     </div>
   );
 };

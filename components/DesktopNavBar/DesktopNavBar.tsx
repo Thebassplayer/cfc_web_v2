@@ -5,22 +5,23 @@ import NavBarButton from "../NavBarButton/NavBarButton";
 import Link from "next/link";
 import AuthButton from "../AuthButton";
 import { cm } from "@/utils/classMerge";
+import { NavBarButtonProps } from "@/types";
 
-type NavBarProps = {
+type DesktopNavBarProps = {
   className?: string;
 };
 
-const NAV_BAR_BUTTONS = [
+export const NAV_BAR_BUTTONS: NavBarButtonProps[] = [
   { path: "/", text: "Inicio" },
   { path: "/filosofia", text: "Filosofia" },
   { path: "/contacto", text: "Contacto" },
 ];
 
-const NavBar = ({ className }: NavBarProps) => {
+const DesktopNavBar = ({ className }: DesktopNavBarProps) => {
   return (
     <nav
       className={cm(
-        "flex h-full w-full flex-row items-center border-b-2  border-black bg-purple-extralight px-28 py-2 shadow-xl",
+        "hidden h-full w-full flex-row items-center border-b-2  border-black bg-purple-extralight px-28 py-2 shadow-xl lg:flex",
         className,
       )}
     >
@@ -39,4 +40,4 @@ const NavBar = ({ className }: NavBarProps) => {
   );
 };
 
-export default NavBar;
+export default DesktopNavBar;
