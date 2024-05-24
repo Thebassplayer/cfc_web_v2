@@ -61,4 +61,12 @@ const signUp = async (formData: FormData) => {
   return redirect(url);
 };
 
-export { signIn, signUp };
+const signOut = async () => {
+  "use server";
+
+  const supabase = createClient();
+  await supabase.auth.signOut();
+  return redirect("/login");
+};
+
+export { signIn, signUp, signOut };

@@ -2,7 +2,7 @@ import { SubmitButton } from "@/components/SubmitButton/submit-button";
 import React from "react";
 import Link from "next/link";
 import FormError from "@/components/FormError/FormError";
-import { signIn, signUp } from "@/app/utils/authHandlers";
+import { signIn, signUp } from "@/utils/authHandlers";
 
 const AuthForm = ({ searchParams }: { searchParams: { message: string } }) => {
   return (

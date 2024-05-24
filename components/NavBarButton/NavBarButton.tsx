@@ -18,7 +18,7 @@ const NavBarButton = ({ path, text }: NavBarButtonProps) => {
       <Link
         href={path}
         className={cm(
-          "m-0 font-sifonn text-2xl uppercase text-white decoration-2 hover:underline",
+          "m-0 font-sifonn text-xl uppercase text-white decoration-2 hover:underline",
           isActive ? "underline" : "",
         )}
       >
