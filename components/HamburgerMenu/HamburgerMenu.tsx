@@ -70,19 +70,27 @@ const HamburgerMenu = () => {
           )}
         >
           <li>
-            <Link href={"/"}>Inicio</Link>
+            <Link href={"/"} onClick={() => toggleNavMenu()}>
+              Inicio
+            </Link>
           </li>
           <li>
-            <Link href={"/filosofia"}>Filosofia</Link>
+            <Link href={"/filosofia"} onClick={() => toggleNavMenu()}>
+              Filosofia
+            </Link>
           </li>
           <li>
-            <Link href={"/contacto"}>Contacto</Link>
+            <Link href={"/contacto"} onClick={() => toggleNavMenu()}>
+              Contacto
+            </Link>
           </li>
           {user ? (
             <li onClick={handleLogout}>Salir</li>
           ) : (
             <li>
-              <Link href={"/login"}>Ingresar</Link>
+              <Link href={"/login"} onClick={() => toggleNavMenu()}>
+                Ingresar
+              </Link>
             </li>
           )}
         </ul>
