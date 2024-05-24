@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "@/assets/logo1.svg";
+import Logo from "@/assets/Logo1.svg";
 import Image from "next/image";
 import NavBarButton from "../NavBarButton/NavBarButton";
 import Link from "next/link";
