@@ -28,6 +28,7 @@ const HamburgerMenu = () => {
       }
     }
     getUser();
+    console.log("HamburgerMenu -> user", user);
   }, [supabase]);
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -72,7 +73,7 @@ const HamburgerMenu = () => {
         <ul
           ref={menuRef}
           className={cm(
-            "absolute right-0 top-10 z-50 mt-2 flex flex-col gap-4 border-2 border-black bg-white p-4 shadow-lg *:font-roboto *:font-bold",
+            "absolute right-0 top-10 z-50 flex flex-col gap-4 border-2 border-black bg-white shadow-lg *:font-roboto *:font-bold",
           )}
         >
           {MOBILE_NAV_BAR_BUTTONS.map(({ path, text }) => (

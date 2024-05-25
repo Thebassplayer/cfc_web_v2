@@ -14,7 +14,7 @@ export default async function ProtectedPage() {
 
   return (
     <div className="flex h-full w-full grow flex-col items-center justify-center gap-20">
-      <h1 className="font-sifonn text-4xl">
+      <h1 className="font-sifonn text-lg lg:text-4xl">
         Bienvenid@ a tu panel de usuario!
       </h1>
     </div>
