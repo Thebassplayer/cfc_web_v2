@@ -1,11 +1,17 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import HamburgerButton from "../HamburgerButton/HamburgerButton";
-import { signOut } from "@/utils/authHandlers";
 import { cm } from "@/utils/classMerge";
 import { createClient } from "@/utils/supabase/client";
 import { User } from "@supabase/supabase-js";
-import Link from "next/link";
+import HamburgerMenuButton from "./HamburgerMenuButton/HamburgerMenuButto";
+import { NavBarButtonProps } from "@/types";
+
+const MOBILE_NAV_BAR_BUTTONS: NavBarButtonProps[] = [
+  { path: "/", text: "Inicio" },
+  { path: "/filosofia", text: "Filosofia" },
+  { path: "/contacto", text: "Contacto" },
+];
 
 const HamburgerMenu = () => {
   const supabase = createClient();
@@ -66,32 +72,32 @@ const HamburgerMenu = () => {
         <ul
           ref={menuRef}
           className={cm(
-            "absolute right-0 top-10 z-50 mt-2 flex flex-col gap-4 border-2 bg-white p-4 shadow-lg *:font-roboto *:font-bold",
+            "absolute right-0 top-10 z-50 mt-2 flex flex-col gap-4 border-2 border-black bg-white p-4 shadow-lg *:font-roboto *:font-bold",
           )}
         >
-          <li>
-            <Link href={"/"} onClick={() => toggleNavMenu()}>
-              Inicio
-            </Link>
-          </li>
-          <li>
-            <Link href={"/filosofia"} onClick={() => toggleNavMenu()}>
-              Filosofia
-            </Link>
-          </li>
-          <li>
-            <Link href={"/contacto"} onClick={() => toggleNavMenu()}>
-              Contacto
-            </Link>
-          </li>
+          {MOBILE_NAV_BAR_BUTTONS.map(({ path, text }) => (
+            <HamburgerMenuButton
+              key={`${path}-${text}`}
+              href={path}
+              text={text}
+              onClick={toggleNavMenu}
+            />
+          ))}
           {user ? (
-            <li onClick={handleLogout}>Salir</li>
+            <>
+              <HamburgerMenuButton
+                href={"/dashboard"}
+                text={"Mis Clases"}
+                onClick={toggleNavMenu}
+              />
+              <HamburgerMenuButton text={"Salir"} onClick={handleLogout} />
+            </>
           ) : (
-            <li>
-              <Link href={"/login"} onClick={() => toggleNavMenu()}>
-                Iniciar
-              </Link>
-            </li>
+            <HamburgerMenuButton
+              href={"/login"}
+              text={"Ingrasar"}
+              onClick={toggleNavMenu}
+            />
           )}
         </ul>
       )}
