@@ -5,13 +5,13 @@ import Link from "next/link";
 
 const HeroOne = () => {
   return (
-    <section className="relative flex h-full w-full flex-col overflow-hidden bg-purple-extralight lg:grow lg:px-28">
-      <div className="flex w-full items-center justify-center p-4 lg:absolute lg:right-8 lg:top-0 lg:h-full">
+    <section className="relative grid h-full w-full grid-rows-12 overflow-hidden bg-purple-extralight lg:flex lg:grow lg:flex-col lg:px-28">
+      <div className="row-span-7 row-start-1 flex w-full items-center justify-center p-2 lg:absolute lg:right-8 lg:top-0 lg:h-full">
         <Image src={PortadaDesktop} alt="Portada" className="hidden lg:block" />
         <Image
           src={PortadaMovile}
           alt="Portada"
-          className="w-full object-contain lg:hidden"
+          className="h-full object-contain lg:hidden"
         />
       </div>
       <div className="lg:z-10 lg:grid lg:h-full lg:grid-rows-2">
@@ -31,7 +31,7 @@ const HeroOne = () => {
             <Link
               href={"/contacto"}
               title="Quiero saber mas"
-              className="mt-4 w-full rounded-md bg-primary-yellow px-4 py-2 text-center font-roboto font-semibold text-purple-dark hover:scale-105 active:bg-purple-dark active:text-primary-yellow lg:justify-self-center"
+              className="w-full rounded-md bg-primary-yellow px-4 py-2 text-center font-roboto font-semibold text-purple-dark hover:scale-105 active:bg-purple-dark active:text-primary-yellow lg:mt-4 lg:justify-self-center"
             >
               Quiero saber mas
             </Link>
