@@ -5,8 +5,8 @@ import Link from "next/link";
 
 const HeroOne = () => {
   return (
-    <section className="relative flex h-full w-full flex-col bg-purple-extralight lg:grow lg:px-28">
-      <div className="right-8 top-0 flex w-full items-center justify-center p-4 lg:absolute lg:h-full">
+    <section className="relative flex h-full w-full flex-col overflow-hidden bg-purple-extralight lg:grow lg:px-28">
+      <div className="flex w-full items-center justify-center p-4 lg:absolute lg:right-8 lg:top-0 lg:h-full">
         <Image src={PortadaDesktop} alt="Portada" className="hidden lg:block" />
         <Image
           src={PortadaMovile}
