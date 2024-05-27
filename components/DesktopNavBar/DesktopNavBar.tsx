@@ -3,7 +3,7 @@ import Logo from "@/assets/Logo1.svg";
 import Image from "next/image";
 import NavBarButton from "../NavBarButton/NavBarButton";
 import Link from "next/link";
-import AuthButton from "../AuthButton";
+import AuthButton from "../AuthButton/AuthButton";
 import { cm } from "@/utils/classMerge";
 import { NavBarButtonProps } from "@/types";
 

@@ -1,7 +1,7 @@
 import { cm } from "@/utils/classMerge";
 import { createClient } from "@/utils/supabase/server";
 import Link from "next/link";
-import Avatar from "./Avatar/Avatar";
+import Avatar from "../Avatar/Avatar";
 import { signOut } from "@/utils/authHandlers";
 
 export default async function AuthButton() {

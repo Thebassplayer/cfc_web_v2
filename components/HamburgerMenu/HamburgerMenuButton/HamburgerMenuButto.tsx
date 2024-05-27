@@ -13,11 +13,11 @@ const HamburgerMenuButton = ({
   text,
 }: HamburgerMenuButtonProps) => {
   return (
-    <li className="px-6 py-2 hover:bg-black hover:text-white">
-      <Link href={href} onClick={() => onClick()}>
+    <Link href={href} onClick={() => onClick()}>
+      <li className="px-6 py-2 text-center hover:bg-black hover:text-white">
         {text}
-      </Link>
-    </li>
+      </li>
+    </Link>
   );
 };
 

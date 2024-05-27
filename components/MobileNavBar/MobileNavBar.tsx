@@ -3,12 +3,21 @@ import Image from "next/image";
 import Link from "next/link";
 import { cm } from "@/utils/classMerge";
 import HamburgerMenu from "../HamburgerMenu/HamburgerMenu";
+import { createClient } from "@/utils/supabase/server";
+import AuthButton from "../AuthButton/AuthButton";
+import SignOutButton from "../SignOutButton/SignOutButton";
 
 type MobileNavBarProps = {
   className?: string;
 };
 
-const MobileNavBar = ({ className }: MobileNavBarProps) => {
+export default async function MobileNavBar({ className }: MobileNavBarProps) {
+  const supabase = createClient();
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
   return (
     <nav
       className={cm(
@@ -21,9 +30,9 @@ const MobileNavBar = ({ className }: MobileNavBarProps) => {
           <Image src={Logo} alt="LOGO" height={40} />
         </Link>
       </div>
-      <HamburgerMenu />
+      <HamburgerMenu user={user}>
+        <SignOutButton />
+      </HamburgerMenu>
     </nav>
   );
-};
-
-export default MobileNavBar;
+}
