@@ -15,8 +15,6 @@ const signIn = async (formData: FormData) => {
     password,
   });
 
-  console.log("Error @ SignIn", error);
-
   if (error) {
     return redirect(
       "/login?message=Hubo un error al intentar autenticar tu usuario, intentalo mas tarde",
