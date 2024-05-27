@@ -2,7 +2,6 @@ import Logo from "@/assets/Logo1.svg";
 import Image from "next/image";
 import Link from "next/link";
 import { cm } from "@/utils/classMerge";
-import { NavBarButtonProps } from "@/types";
 import HamburgerMenu from "../HamburgerMenu/HamburgerMenu";
 
 type MobileNavBarProps = {

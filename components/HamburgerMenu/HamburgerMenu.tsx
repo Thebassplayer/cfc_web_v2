@@ -28,7 +28,6 @@ const HamburgerMenu = () => {
       }
     }
     getUser();
-    console.log("HamburgerMenu -> user", user);
   }, [supabase]);
 
   const [isOpen, setIsOpen] = useState<boolean>(false);

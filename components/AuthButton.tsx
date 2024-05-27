@@ -1,7 +1,6 @@
 import { cm } from "@/utils/classMerge";
 import { createClient } from "@/utils/supabase/server";
 import Link from "next/link";
-import { redirect } from "next/navigation";
 import Avatar from "./Avatar/Avatar";
 import { signOut } from "@/utils/authHandlers";
 
