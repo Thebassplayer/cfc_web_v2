@@ -7,20 +7,20 @@ import { signIn, signUp } from "@/utils/authHandlers";
 const AuthForm = ({ searchParams }: { searchParams: { message: string } }) => {
   return (
     <form className="animate-in text-foreground row-start-4 flex h-min w-full flex-col justify-center gap-2 rounded-md border p-4">
-      <label className="text-md" htmlFor="email">
+      <label className="lg:text-md text-sm" htmlFor="email">
         Email
       </label>
       <input
-        className="mb-6 rounded-md border bg-inherit px-4 py-2"
+        className="mb-6 rounded-md border bg-inherit px-4 py-2 text-sm lg:text-base"
         name="email"
         placeholder="soy@flexible.com"
         required
       />
-      <label className="text-md" htmlFor="password">
+      <label className="lg:text-md text-sm" htmlFor="password">
         Contraseña
       </label>
       <input
-        className="mb-6 rounded-md border bg-inherit px-4 py-2"
+        className="mb-6 rounded-md border bg-inherit px-4 py-2 text-sm lg:text-base"
         type="password"
         name="password"
         placeholder="••••••••"
