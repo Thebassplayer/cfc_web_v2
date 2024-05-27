@@ -15,7 +15,7 @@ const HamburgerButton = ({
       title="Abrir menú de navegación"
       onClick={toggleNavMenu}
       className={cm(
-        "focus:ring-primary inline-flex items-center justify-center p-2 text-black hover:text-black hover:ring-2 hover:ring-black focus:outline-none",
+        "inline-flex items-center justify-center p-2 text-black focus:outline-none",
       )}
     >
       <svg

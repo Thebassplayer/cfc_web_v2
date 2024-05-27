@@ -2,9 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import HamburgerButton from "../HamburgerButton/HamburgerButton";
 import { cm } from "@/utils/classMerge";
-import { createClient } from "@/utils/supabase/client";
-import { User } from "@supabase/supabase-js";
-import HamburgerMenuButton from "./HamburgerMenuButton/HamburgerMenuButto";
+import HamburgerMenuButton from "./HamburgerMenuButton/HamburgerMenuButton";
 import { NavBarButtonProps } from "@/types";
 import { usePathname } from "next/navigation";
 

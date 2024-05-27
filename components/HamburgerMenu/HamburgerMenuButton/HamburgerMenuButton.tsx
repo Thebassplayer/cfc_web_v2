@@ -14,7 +14,7 @@ const HamburgerMenuButton = ({
 }: HamburgerMenuButtonProps) => {
   return (
     <Link href={href} onClick={() => onClick()}>
-      <li className="px-6 py-2 text-center hover:bg-black hover:text-white">
+      <li className="px-6 py-3 text-center hover:bg-black hover:text-white">
         {text}
       </li>
     </Link>
