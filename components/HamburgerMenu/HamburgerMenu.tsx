@@ -1,5 +1,5 @@
 "use client";
-import React, { use, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import HamburgerButton from "../HamburgerButton/HamburgerButton";
 import { cm } from "@/utils/classMerge";
 import { createClient } from "@/utils/supabase/client";
@@ -10,7 +10,7 @@ import { usePathname } from "next/navigation";
 
 type HamburgerMenuProps = {
   children: React.ReactNode;
-  user: User | null;
+  user: boolean;
 };
 
 const MOBILE_NAV_BAR_BUTTONS: NavBarButtonProps[] = [
@@ -27,7 +27,6 @@ const HamburgerMenu = ({ children, user }: HamburgerMenuProps) => {
 
   useEffect(() => {
     setIsOpen(false);
-    console.log("Pathname changed:", pathname);
   }, [pathname]);
 
   const toggleNavMenu = () => {

@@ -30,7 +30,7 @@ export default async function MobileNavBar({ className }: MobileNavBarProps) {
           <Image src={Logo} alt="LOGO" height={40} />
         </Link>
       </div>
-      <HamburgerMenu user={user}>
+      <HamburgerMenu user={Boolean(user)}>
         <SignOutButton />
       </HamburgerMenu>
     </nav>
