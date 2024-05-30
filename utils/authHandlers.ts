@@ -10,15 +10,27 @@ const signIn = async (formData: FormData) => {
   const password = formData.get("password") as string;
   const supabase = createClient();
 
-  const { error } = await supabase.auth.signInWithPassword({
+  const { error: loginError } = await supabase.auth.signInWithPassword({
     email,
     password,
   });
 
-  if (error) {
+  if (loginError) {
     return redirect(
       "/login?message=Hubo un error al intentar autenticar tu usuario, intentalo mas tarde",
     );
+  }
+
+  let { data: role, error: getRoleError } = await supabase
+    .from("profiles")
+    .select("role");
+
+  if (getRoleError) {
+    return redirect("/error");
+  }
+
+  if (!!role && role[0].role === "admin") {
+    return redirect("/admin");
   }
 
   return redirect("/dashboard");
