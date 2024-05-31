@@ -4,8 +4,8 @@ import Link from "next/link";
 import { cm } from "@/utils/classMerge";
 import HamburgerMenu from "../HamburgerMenu/HamburgerMenu";
 import { createClient } from "@/utils/supabase/server";
-import AuthButton from "../AuthButton/AuthButton";
 import SignOutButton from "../SignOutButton/SignOutButton";
+import getUserRole from "@/utils/supabase/getUserRole";
 
 type MobileNavBarProps = {
   className?: string;
@@ -17,6 +17,8 @@ export default async function MobileNavBar({ className }: MobileNavBarProps) {
   const {
     data: { user },
   } = await supabase.auth.getUser();
+
+  const { role } = await getUserRole();
 
   return (
     <nav
@@ -30,7 +32,7 @@ export default async function MobileNavBar({ className }: MobileNavBarProps) {
           <Image src={Logo} alt="LOGO" height={40} />
         </Link>
       </div>
-      <HamburgerMenu user={Boolean(user)}>
+      <HamburgerMenu user={Boolean(user)} role={role}>
         <SignOutButton />
       </HamburgerMenu>
     </nav>

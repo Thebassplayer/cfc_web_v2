@@ -5,10 +5,13 @@ import { cm } from "@/utils/classMerge";
 import HamburgerMenuButton from "./HamburgerMenuButton/HamburgerMenuButton";
 import { NavBarButtonProps } from "@/types";
 import { usePathname } from "next/navigation";
+import getUserRole from "@/utils/supabase/getUserRole";
+import { Database } from "@/types/supabase";
 
 type HamburgerMenuProps = {
   children: React.ReactNode;
   user: boolean;
+  role: "user" | "admin" | "super_admin" | null;
 };
 
 const MOBILE_NAV_BAR_BUTTONS: NavBarButtonProps[] = [
@@ -17,7 +20,7 @@ const MOBILE_NAV_BAR_BUTTONS: NavBarButtonProps[] = [
   { path: "/contacto", text: "Contacto" },
 ];
 
-const HamburgerMenu = ({ children, user }: HamburgerMenuProps) => {
+const HamburgerMenu = ({ children, user, role }: HamburgerMenuProps) => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const menuRef = useRef<HTMLUListElement>(null);
@@ -73,11 +76,20 @@ const HamburgerMenu = ({ children, user }: HamburgerMenuProps) => {
           ))}
           {user ? (
             <>
-              <HamburgerMenuButton
-                href={"/dashboard"}
-                text={"Mis Clases"}
-                onClick={toggleNavMenu}
-              />
+              <>
+                {role === "admin" && (
+                  <HamburgerMenuButton
+                    href={"/dashboard/admin"}
+                    text={"Administrar"}
+                    onClick={toggleNavMenu}
+                  />
+                )}
+                <HamburgerMenuButton
+                  href={"/dashboard"}
+                  text={"Mis Clases"}
+                  onClick={toggleNavMenu}
+                />
+              </>
               {children}
             </>
           ) : (

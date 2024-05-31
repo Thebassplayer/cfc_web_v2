@@ -20,11 +20,7 @@ export default async function ProtectedPage() {
     return redirect("/error");
   }
 
-  const { role, username } = profiles[0];
-
-  if (role && role === "admin") {
-    return redirect("/admin");
-  }
+  const { username } = profiles[0];
 
   return (
     <div className="flex h-full w-full grow flex-col items-center justify-center gap-20">

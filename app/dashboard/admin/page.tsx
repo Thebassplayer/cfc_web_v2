@@ -10,21 +10,13 @@ export default async function AdminPage() {
 
   let { data: profiles, error } = await supabase
     .from("profiles")
-    .select("role, username");
-
-  if (!user) {
-    return redirect("/login");
-  }
+    .select("username");
 
   if (!profiles) {
     return redirect("/login");
   }
 
-  const { role, username } = profiles[0];
-
-  if (role && role !== "admin") {
-    return redirect("/dashboard");
-  }
+  const { username } = profiles[0];
 
   return (
     <div className="flex h-full w-full grow flex-col items-center justify-center gap-20">

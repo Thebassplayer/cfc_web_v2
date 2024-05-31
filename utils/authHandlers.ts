@@ -15,22 +15,16 @@ const signIn = async (formData: FormData) => {
     password,
   });
 
+  if (loginError?.status === 400) {
+    return redirect(
+      "/login?message=Credenciales incorrectas, por favor intenta de nuevo",
+    );
+  }
+
   if (loginError) {
     return redirect(
       "/login?message=Hubo un error al intentar autenticar tu usuario, intentalo mas tarde",
     );
-  }
-
-  let { data: role, error: getRoleError } = await supabase
-    .from("profiles")
-    .select("role");
-
-  if (getRoleError) {
-    return redirect("/error");
-  }
-
-  if (!!role && role[0].role === "admin") {
-    return redirect("/admin");
   }
 
   return redirect("/dashboard");
