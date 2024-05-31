@@ -2,6 +2,7 @@ import PortadaDesktop from "@/assets/imagen-portada.png";
 import PortadaMovile from "@/assets/fondo-hero1-mobile.png";
 import Image from "next/image";
 import Link from "next/link";
+import { APP_ROUTES } from "@/constants/routes";
 
 const HeroOne = () => {
   return (
@@ -29,7 +30,7 @@ const HeroOne = () => {
           </p>
           <div className="flex w-full lg:block">
             <Link
-              href={"/contacto"}
+              href={APP_ROUTES.CONTACT}
               title="Quiero saber mas"
               className="w-full rounded-md bg-primary-yellow px-4 py-2 text-center font-roboto font-semibold text-purple-dark hover:scale-105 active:bg-purple-dark active:text-primary-yellow lg:mt-4 lg:justify-self-center"
             >

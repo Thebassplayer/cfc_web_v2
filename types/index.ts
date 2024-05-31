@@ -1,6 +1,10 @@
+import { RouteType } from "@/constants/routes";
+
 type NavBarButtonProps = {
-  path: string;
+  path: RouteType;
   text: string;
 };
 
-export type { NavBarButtonProps };
+type SearchParamsMessage = { message?: string; error?: string };
+
+export type { NavBarButtonProps, SearchParamsMessage };

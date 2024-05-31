@@ -1,10 +1,16 @@
 import { SubmitButton } from "@/components/SubmitButton/submit-button";
 import React from "react";
 import Link from "next/link";
-import FormError from "@/components/FormError/FormError";
+import FormMessage from "@/components/FormError/FormError";
 import { signIn, signUp } from "@/utils/authHandlers";
+import { APP_ROUTES } from "@/constants/routes";
+import { SearchParamsMessage } from "@/types";
 
-const AuthForm = ({ searchParams }: { searchParams: { message: string } }) => {
+type AuthFormProps = {
+  searchParamsMessage: SearchParamsMessage;
+};
+
+const AuthForm = ({ searchParamsMessage }: AuthFormProps) => {
   return (
     <form className="animate-in text-foreground row-start-4 flex h-min w-full flex-col justify-center gap-2 rounded-md border p-4">
       <label className="lg:text-md text-sm" htmlFor="email">
@@ -40,10 +46,13 @@ const AuthForm = ({ searchParams }: { searchParams: { message: string } }) => {
       >
         Registrate
       </SubmitButton>
-      <Link className="text-center text-sm hover:underline" href={"/forgot"}>
+      <Link
+        className="text-center text-sm hover:underline"
+        href={APP_ROUTES.FORGOT.ROOT}
+      >
         Olvide mi contraseña
       </Link>
-      {searchParams?.message && <FormError searchParams={searchParams} />}
+      <FormMessage searchParamsMessage={searchParamsMessage} />
     </form>
   );
 };

@@ -1,3 +1,4 @@
+import { APP_ROUTES } from "@/constants/routes";
 import generateErrorMessageURI from "@/utils/generateErrorMessageURI";
 import { createClient } from "@/utils/supabase/server";
 import { headers } from "next/headers";
@@ -15,19 +16,21 @@ const signIn = async (formData: FormData) => {
     password,
   });
 
+  // 400: Invalid credentials
   if (loginError?.status === 400) {
     return redirect(
-      "/login?message=Credenciales incorrectas, por favor intenta de nuevo",
+      `${APP_ROUTES.LOGIN}?error=Credenciales incorrectas, por favor intenta de nuevo`,
     );
   }
 
+  // Generic error
   if (loginError) {
     return redirect(
-      "/login?message=Hubo un error al intentar autenticar tu usuario, intentalo mas tarde",
+      `${APP_ROUTES.LOGIN}?error=Hubo un error al intentar autenticar tu usuario, intentalo mas tarde`,
     );
   }
 
-  return redirect("/dashboard");
+  return redirect(APP_ROUTES.DASHBOARD.ROOT);
 };
 
 const signUp = async (formData: FormData) => {
@@ -49,18 +52,18 @@ const signUp = async (formData: FormData) => {
   console.log("Error @ SignUp", error);
 
   if (error) {
-    const message = generateErrorMessageURI(
+    const errorMessage = generateErrorMessageURI(
       "Hubo un error al intentar registrarte, intentalo mas tarde",
     );
-    const url = `/login?message=${message}`;
+    const url = `/login?error=${errorMessage}`;
     return redirect(url);
   }
 
-  const message = generateErrorMessageURI(
+  const successMessage = generateErrorMessageURI(
     "Revisa tu correo para continuar con el registro",
   );
 
-  const url = `/login?message=${message}`;
+  const url = `${APP_ROUTES.LOGIN}?message=${successMessage}`;
 
   return redirect(url);
 };
@@ -70,7 +73,7 @@ const signOut = async () => {
 
   const supabase = createClient();
   await supabase.auth.signOut();
-  return redirect("/");
+  return redirect(APP_ROUTES.HOME);
 };
 
 export { signIn, signUp, signOut };

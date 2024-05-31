@@ -6,15 +6,16 @@ import Link from "next/link";
 import AuthButton from "../AuthButton/AuthButton";
 import { cm } from "@/utils/classMerge";
 import { NavBarButtonProps } from "@/types";
+import { APP_ROUTES } from "@/constants/routes";
 
 type DesktopNavBarProps = {
   className?: string;
 };
 
 export const NAV_BAR_BUTTONS: NavBarButtonProps[] = [
-  { path: "/", text: "Inicio" },
-  { path: "/filosofia", text: "Filosofia" },
-  { path: "/contacto", text: "Contacto" },
+  { path: APP_ROUTES.HOME, text: "Inicio" },
+  { path: APP_ROUTES.FILOSOFY, text: "Filosofia" },
+  { path: APP_ROUTES.CONTACT, text: "Contacto" },
 ];
 
 const DesktopNavBar = ({ className }: DesktopNavBarProps) => {
@@ -26,7 +27,7 @@ const DesktopNavBar = ({ className }: DesktopNavBarProps) => {
       )}
     >
       <div className="flex items-start">
-        <Link href={"/"}>
+        <Link href={APP_ROUTES.HOME}>
           <Image src={Logo} alt="LOGO" height={80} />
         </Link>
       </div>

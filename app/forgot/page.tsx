@@ -1,18 +1,17 @@
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 import { SubmitButton } from "@/components/SubmitButton/submit-button";
-import FormError from "@/components/FormError/FormError";
+import FormMessage from "@/components/FormError/FormError";
 import generateErrorMessageURI from "@/utils/generateErrorMessageURI";
+import { APP_ROUTES } from "@/constants/routes";
+import { BASE_URL } from "@/constants/baseUrl";
+import { SearchParamsMessage } from "@/types";
 
-const defaultUrl = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
-  : "http://localhost:3000";
+type LoginProps = {
+  searchParams: SearchParamsMessage;
+};
 
-export default function Login({
-  searchParams,
-}: {
-  searchParams: { message: string };
-}) {
+export default function Login({ searchParams }: LoginProps) {
   const forgot = async (formData: FormData) => {
     "use server";
 
@@ -20,7 +19,7 @@ export default function Login({
     const supabase = createClient();
 
     let { data, error } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: `${defaultUrl}/forgot/update`,
+      redirectTo: `${BASE_URL}/forgot/update`,
     });
     console.log(data, error);
 
@@ -28,11 +27,11 @@ export default function Login({
       const message = generateErrorMessageURI(
         "Hubo un error al intentar recuperar tu contraseña",
       );
-      const url = `/forgot?message=${message}`;
+      const url = `${APP_ROUTES.FORGOT.ROOT}?error=${message}`;
       return redirect(url);
     }
 
-    return redirect("/forgot/success");
+    return redirect(APP_ROUTES.FORGOT.SUCCESS);
   };
 
   return (
@@ -55,8 +54,7 @@ export default function Login({
         >
           Recuperar Contraseña
         </SubmitButton>
-
-        {searchParams?.message && <FormError searchParams={searchParams} />}
+        <FormMessage searchParamsMessage={searchParams} />
       </form>
     </div>
   );

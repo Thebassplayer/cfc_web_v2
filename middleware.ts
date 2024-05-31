@@ -1,6 +1,7 @@
 import { NextFetchEvent, NextRequest, NextResponse } from "next/server";
 import { updateSession } from "@/utils/supabase/middleware";
 import getUserRole from "./utils/supabase/getUserRole";
+import { APP_ROUTES } from "./constants/routes";
 
 export async function middleware(
   request: NextRequest,
@@ -9,15 +10,17 @@ export async function middleware(
 ) {
   await updateSession(request);
 
-  if (request.nextUrl.pathname.startsWith("/dashboard/admin")) {
+  if (request.nextUrl.pathname.startsWith(APP_ROUTES.DASHBOARD.ADMIN)) {
     const { role } = await getUserRole();
 
     if (role !== "admin") {
-      return NextResponse.redirect(new URL("/dashboard", request.url));
+      return NextResponse.redirect(
+        new URL(APP_ROUTES.DASHBOARD.ROOT, request.url),
+      );
     }
 
     if (!role) {
-      return NextResponse.redirect(new URL("/", request.url));
+      return NextResponse.redirect(new URL(APP_ROUTES.HOME, request.url));
     }
   }
 }

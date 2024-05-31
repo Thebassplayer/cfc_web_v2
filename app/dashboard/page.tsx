@@ -1,3 +1,4 @@
+import { APP_ROUTES } from "@/constants/routes";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 
@@ -13,11 +14,11 @@ export default async function ProtectedPage() {
     .select("role, username");
 
   if (!user) {
-    return redirect("/login");
+    return redirect(APP_ROUTES.LOGIN);
   }
 
   if (!profiles) {
-    return redirect("/error");
+    return redirect(APP_ROUTES.HOME);
   }
 
   const { username } = profiles[0];

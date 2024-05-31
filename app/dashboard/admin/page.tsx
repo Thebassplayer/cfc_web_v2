@@ -1,19 +1,16 @@
+import { APP_ROUTES } from "@/constants/routes";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 
 export default async function AdminPage() {
   const supabase = createClient();
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-
   let { data: profiles, error } = await supabase
     .from("profiles")
     .select("username");
 
   if (!profiles) {
-    return redirect("/login");
+    return redirect(APP_ROUTES.LOGIN);
   }
 
   const { username } = profiles[0];

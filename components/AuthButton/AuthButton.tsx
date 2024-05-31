@@ -3,6 +3,7 @@ import { createClient } from "@/utils/supabase/server";
 import Link from "next/link";
 import Avatar from "../Avatar/Avatar";
 import { signOut } from "@/utils/authHandlers";
+import { APP_ROUTES } from "@/constants/routes";
 
 export default async function AuthButton() {
   const supabase = createClient();
@@ -22,13 +23,13 @@ export default async function AuthButton() {
           Salir
         </button>
       </form>
-      <Link href={"/dashboard"} className="size-14">
+      <Link href={APP_ROUTES.DASHBOARD.ROOT} className="size-14">
         <Avatar />
       </Link>
     </div>
   ) : (
     <Link
-      href="/login"
+      href={APP_ROUTES.LOGIN}
       className={cm(
         "font-sifonn text-xl uppercase text-white decoration-2 hover:underline",
       )}

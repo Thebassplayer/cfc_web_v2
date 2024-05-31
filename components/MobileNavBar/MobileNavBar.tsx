@@ -6,6 +6,7 @@ import HamburgerMenu from "../HamburgerMenu/HamburgerMenu";
 import { createClient } from "@/utils/supabase/server";
 import SignOutButton from "../SignOutButton/SignOutButton";
 import getUserRole from "@/utils/supabase/getUserRole";
+import { APP_ROUTES } from "@/constants/routes";
 
 type MobileNavBarProps = {
   className?: string;
@@ -28,7 +29,7 @@ export default async function MobileNavBar({ className }: MobileNavBarProps) {
       )}
     >
       <div className="flex items-start">
-        <Link href={"/"}>
+        <Link href={APP_ROUTES.HOME}>
           <Image src={Logo} alt="LOGO" height={40} />
         </Link>
       </div>

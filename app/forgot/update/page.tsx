@@ -1,8 +1,9 @@
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 import { SubmitButton } from "@/components/SubmitButton/submit-button";
-import FormError from "@/components/FormError/FormError";
+import FormMessage from "@/components/FormError/FormError";
 import generateErrorMessageURI from "@/utils/generateErrorMessageURI";
+import { APP_ROUTES } from "@/constants/routes";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -25,14 +26,14 @@ export default function UpdatePassword({
     console.log(data, error);
 
     if (error) {
-      const message = generateErrorMessageURI(
+      const errorMessage = generateErrorMessageURI(
         "Hubo un error al intentar actualizar tu contraseña, intentalo mas tarde",
       );
-      const url = `/login?message=${message}`;
+      const url = `${APP_ROUTES.LOGIN}?error=${errorMessage}`;
       return redirect(url);
     }
 
-    return redirect("/login");
+    return redirect(APP_ROUTES.LOGIN);
   };
 
   return (
@@ -57,7 +58,7 @@ export default function UpdatePassword({
           Recuperar Contraseña
         </SubmitButton>
 
-        {searchParams?.message && <FormError searchParams={searchParams} />}
+        <FormMessage searchParamsMessage={searchParams} />
       </form>
     </div>
   );
