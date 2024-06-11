@@ -8,10 +8,10 @@ const SignInWithGoogleButton = () => {
     <form action={signInWithGoogle}>
       <button
         type="submit"
-        className="w-full hover:scale-105"
+        className="hover:scale-105"
         title="Sign in with Google"
       >
-        <Image src={googleLogo} alt="LOGO" height={40} />
+        <Image src={googleLogo} alt="LOGO" height={30} />
       </button>
     </form>
   );

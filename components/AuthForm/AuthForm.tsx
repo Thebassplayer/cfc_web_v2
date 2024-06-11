@@ -48,16 +48,16 @@ const AuthForm = ({ searchParamsMessage }: AuthFormProps) => {
         >
           Registrate
         </SubmitButton>
+        <Link
+          className="text-center text-sm hover:underline"
+          href={APP_ROUTES.FORGOT.ROOT}
+        >
+          Olvide mi contraseña
+        </Link>
+        <FormMessage searchParamsMessage={searchParamsMessage} />
       </form>
-      <Link
-        className="text-center text-sm hover:underline"
-        href={APP_ROUTES.FORGOT.ROOT}
-      >
-        Olvide mi contraseña
-      </Link>
-      <FormMessage searchParamsMessage={searchParamsMessage} />
-      <div className="flex flex-col items-center justify-center gap-4 bg-slate-100 p-8">
-        <h2>Ingresar con Red Social</h2>
+      <div className="mt-2 flex flex-col items-center justify-center gap-4 bg-slate-100 p-1">
+        <h2>Ingresar con</h2>
         <SignInWithGoogleButton />
       </div>
     </div>
