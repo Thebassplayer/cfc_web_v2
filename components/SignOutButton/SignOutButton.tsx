@@ -1,6 +1,4 @@
 import { cm } from "@/utils/classMerge";
-import Link from "next/link";
-import Avatar from "../Avatar/Avatar";
 import { signOut } from "@/utils/authHandlers";
 
 export default async function SignOutButton() {

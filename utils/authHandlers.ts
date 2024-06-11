@@ -76,4 +76,26 @@ const signOut = async () => {
   return redirect(APP_ROUTES.HOME);
 };
 
-export { signIn, signUp, signOut };
+const signInWithGoogle = async () => {
+  "use server";
+  const supabase = createClient();
+  const { data, error } = await supabase.auth.signInWithOAuth({
+    provider: "google",
+    options: {
+      queryParams: {
+        access_type: "offline",
+        prompt: "consent",
+      },
+      redirectTo: `${headers().get("origin")}/auth/callback`,
+    },
+  });
+
+  if (error) {
+    console.log(error);
+    redirect("/error");
+  }
+
+  redirect(data.url);
+};
+
+export { signIn, signUp, signOut, signInWithGoogle };

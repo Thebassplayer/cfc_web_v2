@@ -9,6 +9,8 @@ export default async function ProtectedPage() {
     data: { user },
   } = await supabase.auth.getUser();
 
+  console.log("User", user);
+
   let { data: profiles, error } = await supabase
     .from("profiles")
     .select("role, username");
