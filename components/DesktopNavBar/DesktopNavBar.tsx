@@ -7,6 +7,8 @@ import AuthButton from "../AuthButton/AuthButton";
 import { cm } from "@/utils/classMerge";
 import { NavBarButtonProps } from "@/types";
 import { APP_ROUTES } from "@/constants/routes";
+import { createClient } from "@/utils/supabase/server";
+import getUserRole from "@/utils/supabase/getUserRole";
 
 type DesktopNavBarProps = {
   className?: string;
@@ -18,7 +20,14 @@ export const NAV_BAR_BUTTONS: NavBarButtonProps[] = [
   { path: APP_ROUTES.CONTACT, text: "Contacto" },
 ];
 
-const DesktopNavBar = ({ className }: DesktopNavBarProps) => {
+export default async function DesktopNavBar({ className }: DesktopNavBarProps) {
+  const supabase = createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  const { role } = await getUserRole();
+
   return (
     <nav
       className={cm(
@@ -35,10 +44,14 @@ const DesktopNavBar = ({ className }: DesktopNavBarProps) => {
         {NAV_BAR_BUTTONS.map(({ path, text }) => (
           <NavBarButton key={`${path}-${text}`} path={path} text={text} />
         ))}
+        {user && (
+          <NavBarButton path={APP_ROUTES.DASHBOARD.ROOT} text="Mis Clases" />
+        )}
+        {role === "admin" && (
+          <NavBarButton path={APP_ROUTES.DASHBOARD.ADMIN} text="Admin" />
+        )}
       </ul>
       <AuthButton />
     </nav>
   );
-};
-
-export default DesktopNavBar;
+}

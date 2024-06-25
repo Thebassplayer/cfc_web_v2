@@ -79,7 +79,7 @@ const HamburgerMenu = ({ children, user, role }: HamburgerMenuProps) => {
                 {role === "admin" && (
                   <HamburgerMenuButton
                     href={APP_ROUTES.DASHBOARD.ADMIN}
-                    text={"Administrar"}
+                    text={"Admin"}
                     onClick={toggleNavMenu}
                   />
                 )}
