@@ -14,6 +14,10 @@ export const APP_ROUTES = {
   FILOSOFY: "/filosofy",
   PROFILE: "/profile",
   NOT_FOUND: "/404",
+  ERROR: "/error",
+  AUTH: {
+    CALLBACK: "/auth/callback",
+  },
 } as const;
 
 type AppRoutes = typeof APP_ROUTES;

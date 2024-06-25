@@ -1,3 +1,4 @@
+import { APP_ROUTES } from "@/constants/routes";
 import getUserRole from "@/utils/supabase/getUserRole";
 import { createClient } from "@/utils/supabase/server";
 import { NextResponse } from "next/server";
@@ -19,14 +20,14 @@ export async function GET(request: Request) {
 
   // If user is not logged in redirect to /home
   if (!role) {
-    return NextResponse.redirect(`${origin}/home`);
+    return NextResponse.redirect(`${origin}${APP_ROUTES.HOME}`);
   }
 
   // If user is not admin redirect to /dashboard
   if (role !== "admin") {
-    return NextResponse.redirect(`${origin}/dashboard`);
+    return NextResponse.redirect(`${origin}${APP_ROUTES.DASHBOARD.ROOT}`);
   }
 
   // If user is admin redirect to /dashboard/admin
-  return NextResponse.redirect(`${origin}/dashboard/admin`);
+  return NextResponse.redirect(`${origin}${APP_ROUTES.DASHBOARD.ADMIN}`);
 }

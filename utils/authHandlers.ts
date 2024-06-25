@@ -56,7 +56,7 @@ const signUp = async (formData: FormData) => {
     email,
     password,
     options: {
-      emailRedirectTo: `${origin}/auth/callback`,
+      emailRedirectTo: `${origin}${APP_ROUTES.AUTH.CALLBACK}`,
     },
   });
 
@@ -66,7 +66,7 @@ const signUp = async (formData: FormData) => {
     const errorMessage = generateErrorMessageURI(
       "Hubo un error al intentar registrarte, intentalo mas tarde",
     );
-    const url = `/login?error=${errorMessage}`;
+    const url = `${APP_ROUTES.LOGIN}?error=${errorMessage}`;
     return redirect(url);
   }
 
@@ -97,13 +97,13 @@ const signInWithGoogle = async () => {
         access_type: "offline",
         prompt: "consent",
       },
-      redirectTo: `${headers().get("origin")}/auth/callback`,
+      redirectTo: `${headers().get("origin")}${APP_ROUTES.AUTH.CALLBACK}`,
     },
   });
 
   if (error) {
     console.log(error);
-    redirect("/error");
+    redirect(APP_ROUTES.ERROR);
   }
 
   redirect(data.url);
