@@ -13,14 +13,17 @@ export async function middleware(
   if (request.nextUrl.pathname.startsWith(APP_ROUTES.DASHBOARD.ADMIN)) {
     const { role } = await getUserRole();
 
+    // If user is not logged in redirect to /home
+    if (!role) {
+      return NextResponse.redirect(new URL(APP_ROUTES.HOME, request.url));
+    }
+
+    // If user is not admin redirect to /dashboard
+
     if (role !== "admin") {
       return NextResponse.redirect(
         new URL(APP_ROUTES.DASHBOARD.ROOT, request.url),
       );
-    }
-
-    if (!role) {
-      return NextResponse.redirect(new URL(APP_ROUTES.HOME, request.url));
     }
   }
 }

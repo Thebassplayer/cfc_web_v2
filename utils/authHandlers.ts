@@ -3,6 +3,7 @@ import generateErrorMessageURI from "@/utils/generateErrorMessageURI";
 import { createClient } from "@/utils/supabase/server";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
+import getUserRole from "./supabase/getUserRole";
 
 const signIn = async (formData: FormData) => {
   "use server";
@@ -30,7 +31,17 @@ const signIn = async (formData: FormData) => {
     );
   }
 
-  return redirect(APP_ROUTES.DASHBOARD.ROOT);
+  const { role } = await getUserRole();
+
+  if (!role) {
+    return redirect(APP_ROUTES.HOME);
+  }
+
+  if (role !== "admin") {
+    return redirect(APP_ROUTES.DASHBOARD.ROOT);
+  }
+
+  return redirect(APP_ROUTES.DASHBOARD.ADMIN);
 };
 
 const signUp = async (formData: FormData) => {

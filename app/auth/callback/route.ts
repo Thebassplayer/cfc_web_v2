@@ -1,3 +1,4 @@
+import getUserRole from "@/utils/supabase/getUserRole";
 import { createClient } from "@/utils/supabase/server";
 import { NextResponse } from "next/server";
 
@@ -10,11 +11,22 @@ export async function GET(request: Request) {
   const origin = requestUrl.origin;
 
   if (code) {
-    console.log("Code: ", code);
     const supabase = createClient();
     await supabase.auth.exchangeCodeForSession(code);
   }
 
-  // URL to redirect to after sign up process completes
-  return NextResponse.redirect(`${origin}/dashboard`);
+  const { role } = await getUserRole();
+
+  // If user is not logged in redirect to /home
+  if (!role) {
+    return NextResponse.redirect(`${origin}/home`);
+  }
+
+  // If user is not admin redirect to /dashboard
+  if (role !== "admin") {
+    return NextResponse.redirect(`${origin}/dashboard`);
+  }
+
+  // If user is admin redirect to /dashboard/admin
+  return NextResponse.redirect(`${origin}/dashboard/admin`);
 }
