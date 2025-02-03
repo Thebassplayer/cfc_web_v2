@@ -25,16 +25,16 @@ const cards = [
 
 const HeroThree = () => {
   return (
-    <section className="bg-grey-light grid h-full grid-rows-3 p-4 lg:grid-cols-3 lg:grid-rows-4 lg:px-28 lg:py-14">
-      <div className="row-start-1 flex flex-col lg:col-start-1 lg:pb-14">
-        <h1 className="mb-0 font-sifonn text-4xl leading-none text-purple-primary lg:text-5xl">
+    <section className="bg-grey-light grid h-full grid-rows-3 p-4 lg:grid-cols-3 lg:grid-rows-5 lg:px-28 lg:py-14">
+      <div className="row-start-1 flex flex-col lg:col-start-1 lg:pb-10">
+        <h1 className="my-0 font-sifonn text-4xl leading-none text-purple-primary lg:text-5xl">
           ¿A
           <span className="text-primary-yellow"> quien</span>
         </h1>
         <h1 className="my-0 font-sifonn text-4xl leading-none text-purple-primary lg:text-5xl">
           esta dirigida
         </h1>
-        <h1 className="mt-0 font-sifonn text-4xl leading-none text-purple-primary lg:text-5xl">
+        <h1 className="my-0 font-sifonn text-4xl leading-none text-purple-primary lg:text-5xl">
           la practica?
         </h1>
       </div>
