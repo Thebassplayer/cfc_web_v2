@@ -14,8 +14,6 @@ type HamburgerMenuProps = {
 };
 
 const MOBILE_NAV_BAR_BUTTONS: NavBarButtonProps[] = [
-  { path: APP_ROUTES.HOME, text: "Inicio" },
-  { path: APP_ROUTES.FILOSOFY, text: "Filosofia" },
   { path: APP_ROUTES.CONTACT, text: "Contacto" },
 ];
 
@@ -73,31 +71,6 @@ const HamburgerMenu = ({ children, user, role }: HamburgerMenuProps) => {
               onClick={toggleNavMenu}
             />
           ))}
-          {user ? (
-            <>
-              <>
-                {role === "admin" && (
-                  <HamburgerMenuButton
-                    href={APP_ROUTES.DASHBOARD.ADMIN}
-                    text={"Admin"}
-                    onClick={toggleNavMenu}
-                  />
-                )}
-                <HamburgerMenuButton
-                  href={APP_ROUTES.DASHBOARD.ROOT}
-                  text={"Mis Clases"}
-                  onClick={toggleNavMenu}
-                />
-              </>
-              {children}
-            </>
-          ) : (
-            <HamburgerMenuButton
-              href={APP_ROUTES.LOGIN}
-              text={"Ingresar"}
-              onClick={toggleNavMenu}
-            />
-          )}
         </ul>
       )}
       <HamburgerButton buttonRef={buttonRef} toggleNavMenu={toggleNavMenu} />

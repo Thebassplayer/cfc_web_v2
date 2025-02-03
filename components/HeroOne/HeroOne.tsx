@@ -26,7 +26,7 @@ const HeroOne = () => {
             </p>
           </div>
           <p className="pb-2 font-bebas text-2xl uppercase leading-none tracking-wide text-black">
-            conociendo y expandiendo tu fuerza y flexibilidad
+            Reconoce y supera tus límites a través del movimiento consciente
           </p>
           <div className="flex w-full lg:block">
             <Link
