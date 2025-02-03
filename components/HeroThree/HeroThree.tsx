@@ -38,7 +38,7 @@ const HeroThree = () => {
           la practica?
         </h1>
       </div>
-      <div className="row-span-3 row-start-2 flex flex-col justify-evenly py-2 lg:col-start-1 lg:col-end-4 lg:flex-row lg:justify-center">
+      <div className="row-span-4 row-start-2 flex flex-col justify-evenly py-2 lg:col-start-1 lg:col-end-4 lg:flex-row lg:justify-center">
         {cards.map((card) => (
           <HeroThreeCard
             key={card.title}
