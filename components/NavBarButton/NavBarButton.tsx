@@ -14,17 +14,15 @@ const NavBarButton = ({ path, text }: NavBarButtonProps) => {
   const isActive = pathname === path;
 
   return (
-    <li>
-      <Link
-        href={path}
-        className={cm(
-          "m-0 font-sifonn text-xl uppercase text-white decoration-2 hover:underline",
-          isActive ? "underline" : "",
-        )}
-      >
-        {text}
-      </Link>
-    </li>
+    <Link
+      href={path}
+      className={cm(
+        "m-0 font-sifonn text-xl uppercase text-white decoration-2 hover:underline",
+        isActive ? "underline" : "",
+      )}
+    >
+      {text}
+    </Link>
   );
 };
 

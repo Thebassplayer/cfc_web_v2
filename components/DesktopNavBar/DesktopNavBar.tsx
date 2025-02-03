@@ -14,24 +14,11 @@ type DesktopNavBarProps = {
   className?: string;
 };
 
-export const NAV_BAR_BUTTONS: NavBarButtonProps[] = [
-  { path: APP_ROUTES.HOME, text: "Inicio" },
-  { path: APP_ROUTES.FILOSOFY, text: "Filosofia" },
-  { path: APP_ROUTES.CONTACT, text: "Contacto" },
-];
-
 export default async function DesktopNavBar({ className }: DesktopNavBarProps) {
-  const supabase = createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-
-  const { role } = await getUserRole();
-
   return (
     <nav
       className={cm(
-        "hidden h-full w-full flex-row items-center border-b-2  border-black bg-purple-extralight px-28 py-2 shadow-xl lg:flex",
+        "hidden h-full w-full flex-row items-center justify-between border-b-2  border-black bg-purple-extralight px-28 py-2 shadow-xl lg:flex",
         className,
       )}
     >
@@ -40,18 +27,7 @@ export default async function DesktopNavBar({ className }: DesktopNavBarProps) {
           <Image src={Logo} alt="LOGO" height={80} />
         </Link>
       </div>
-      <ul className="flex w-full grow justify-center gap-8">
-        {NAV_BAR_BUTTONS.map(({ path, text }) => (
-          <NavBarButton key={`${path}-${text}`} path={path} text={text} />
-        ))}
-        {user && (
-          <NavBarButton path={APP_ROUTES.DASHBOARD.ROOT} text="Mis Clases" />
-        )}
-        {role === "admin" && (
-          <NavBarButton path={APP_ROUTES.DASHBOARD.ADMIN} text="Admin" />
-        )}
-      </ul>
-      <AuthButton />
+      <NavBarButton path={APP_ROUTES.CONTACT} text="Contacto" />
     </nav>
   );
 }
