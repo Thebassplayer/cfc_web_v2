@@ -94,7 +94,7 @@ const HamburgerMenu = ({ children, user, role }: HamburgerMenuProps) => {
           ) : (
             <HamburgerMenuButton
               href={APP_ROUTES.LOGIN}
-              text={"Ingrasar"}
+              text={"Ingresar"}
               onClick={toggleNavMenu}
             />
           )}
