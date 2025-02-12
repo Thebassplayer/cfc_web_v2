@@ -13,6 +13,7 @@
     "formik": "^2.4.6",
     "framer-motion": "^11.2.9",
     "geist": "^1.2.1",
+    "lucide-react": "^0.475.0",
     "next": "latest",
     "postcss": "8.4.33",
     "prettier-plugin-tailwindcss": "^0.5.14",
