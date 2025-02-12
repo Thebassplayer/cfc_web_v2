@@ -2,7 +2,12 @@ import { APP_ROUTES } from "@/constants/routes";
 import Link from "next/link";
 import React from "react";
 
-const ContactButton = ({ text }: { text: string }) => {
+type ContactButtonProps = {
+  text: string;
+  size?: "sm" | "md" | "lg";
+};
+
+const ContactButton = ({ text, size = "sm" }: ContactButtonProps) => {
   return (
     <Link
       href={APP_ROUTES.CONTACT}
