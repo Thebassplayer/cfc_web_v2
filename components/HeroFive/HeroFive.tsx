@@ -110,7 +110,7 @@ const TestimonialCarousel = () => {
                 />
               </div>
               <div className="flex w-full flex-col justify-end pb-8 lg:w-1/2 lg:pl-8">
-                <h2 className="mt-4 font-sifonn text-2xl leading-none text-purple-primary lg:mt-0">
+                <h2 className="my-4 font-sifonn text-2xl leading-none text-purple-primary lg:mt-0">
                   {testimonies[currentIndex].name}
                 </h2>
                 <p className="mb-4 font-sifonn text-xl leading-none text-purple-primary">
