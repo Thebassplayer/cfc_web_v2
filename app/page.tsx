@@ -4,6 +4,7 @@ import HeroOne from "@/components/HeroOne/HeroOne";
 import { HeroBeneficios } from "@/components/HeroBeneficios/HeroBeneficios";
 import HeroThree from "@/components/HeroThree/HeroThree";
 import HeroTwo from "@/components/HeroTwo/HeroTwo";
+import { HeroQuienesSomos } from "@/components/HeroQuienesSomos/HeroQuienesSomos";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <HeroFour />
       <HeroTestimonial />
       <HeroBeneficios />
+      <HeroQuienesSomos />
     </>
   );
 }
