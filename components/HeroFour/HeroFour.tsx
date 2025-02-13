@@ -19,7 +19,7 @@ const HeroFour = () => {
       <Image
         src={Pilares}
         alt="Dos mujeres sorientes, practicando CFC"
-        className="my-8 h-3/5 object-scale-down"
+        className="my-8 h-[700px] object-scale-down"
       />
       <div className="row-span-2 row-start-2 flex flex-col justify-evenly py-2 lg:flex lg:flex-row lg:justify-center">
         <div className="flex flex-col justify-evenly lg:block lg:w-1/4 lg:px-4">
