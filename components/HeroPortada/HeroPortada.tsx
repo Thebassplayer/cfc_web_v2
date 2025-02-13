@@ -1,11 +1,9 @@
 import PortadaDesktop from "@/assets/imagen-portada.png";
 import PortadaMovile from "@/assets/fondo-hero1-mobile.png";
 import Image from "next/image";
-import Link from "next/link";
-import { APP_ROUTES } from "@/constants/routes";
 import ContactButton from "../ContactButton/ContactButton";
 
-const HeroOne = () => {
+export const HeroPortada = () => {
   return (
     <section className="relative grid h-full w-full grid-rows-12 overflow-hidden bg-purple-extralight lg:flex lg:grow lg:flex-col lg:px-28">
       <div className="row-span-7 row-start-1 flex w-full items-center justify-center p-2 lg:absolute lg:right-8 lg:top-0 lg:h-full">
@@ -37,5 +35,3 @@ const HeroOne = () => {
     </section>
   );
 };
-
-export default HeroOne;
