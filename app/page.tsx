@@ -2,7 +2,7 @@ import { HeroTestimonial } from "@/components/HeroTestimonial/HeroTestimonial";
 import HeroFour from "@/components/HeroFour/HeroFour";
 import { HeroPortada } from "@/components/HeroPortada/HeroPortada";
 import { HeroBeneficios } from "@/components/HeroBeneficios/HeroBeneficios";
-import HeroThree from "@/components/HeroThree/HeroThree";
+import { HeroAQuienEstaDirigida } from "@/components/HeroAQuienEstaDirigida/HeroAQuienEstaDirigida";
 import { HeroEstudiaAnatomia } from "@/components/HeroEstudiaAnatomia/HeroEstudiaAnatomia";
 import { HeroQuienesSomos } from "@/components/HeroQuienesSomos/HeroQuienesSomos";
 import { HeroNuestroEquipo } from "@/components/HeroNuestroEquipo/HeroNuestroEquipo";
@@ -14,7 +14,7 @@ export default function Home() {
     <>
       <HeroPortada />
       <HeroEstudiaAnatomia />
-      <HeroThree />
+      <HeroAQuienEstaDirigida />
       <HeroFour />
       <HeroTestimonial />
       <HeroBeneficios />
