@@ -72,14 +72,32 @@ const testimonies = [
   },
 ];
 
+const variants = {
+  enter: (direction: number) => ({
+    opacity: 0,
+    x: direction > 0 ? 100 : -100,
+  }),
+  center: {
+    opacity: 1,
+    x: 0,
+  },
+  exit: (direction: number) => ({
+    opacity: 0,
+    x: direction > 0 ? -100 : 100,
+  }),
+};
+
 const TestimonialsCarousell = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(1);
 
   const nextTestimonial = () => {
+    setDirection(1);
     setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonies.length);
   };
 
   const prevTestimonial = () => {
+    setDirection(-1);
     setCurrentIndex(
       (prevIndex) => (prevIndex - 1 + testimonies.length) % testimonies.length,
     );
@@ -91,9 +109,11 @@ const TestimonialsCarousell = () => {
         <AnimatePresence mode="wait">
           <motion.div
             key={currentIndex}
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -100 }}
+            custom={direction}
+            variants={variants}
+            initial="enter"
+            animate="center"
+            exit="exit"
             transition={{ duration: 0.5 }}
             className="lg:flex"
           >
@@ -135,7 +155,9 @@ const TestimonialsCarousell = () => {
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className={`h-3 w-3 rounded-full ${index === currentIndex ? "bg-purple-primary" : "bg-gray-300"}`}
+            className={`h-3 w-3 rounded-full ${
+              index === currentIndex ? "bg-purple-primary" : "bg-gray-300"
+            }`}
             aria-label={`Go to testimonial ${index + 1}`}
           />
         ))}
