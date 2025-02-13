@@ -1,4 +1,4 @@
-const HeroTwo = () => {
+export const HeroEstudiaAnatomia = () => {
   return (
     <section className="grid h-3/4 grid-rows-3 p-4 lg:grid-cols-2 lg:grid-rows-2 lg:px-28 lg:py-14">
       <div className="row-start-1 flex flex-col justify-evenly lg:col-start-1 lg:pb-14">
@@ -45,5 +45,3 @@ const HeroTwo = () => {
     </section>
   );
 };
-
-export default HeroTwo;
