@@ -1,6 +1,6 @@
 import ConoceBanner from "../ConoceBanner/ConoceBanner";
 
-const HeroSix = () => {
+export const HeroBeneficios = () => {
   return (
     <section className="grid h-full grid-rows-3 p-4 lg:flex lg:flex-col lg:px-28 lg:py-7">
       <ConoceBanner />
@@ -56,5 +56,3 @@ const HeroSix = () => {
     </section>
   );
 };
-
-export default HeroSix;
