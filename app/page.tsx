@@ -7,6 +7,7 @@ import { HeroEstudiaAnatomia } from "@/components/HeroEstudiaAnatomia/HeroEstudi
 import { HeroQuienesSomos } from "@/components/HeroQuienesSomos/HeroQuienesSomos";
 import { HeroNuestroEquipo } from "@/components/HeroNuestroEquipo/HeroNuestroEquipo";
 import { HeroElPoderDelEquipo } from "@/components/HeroElPoderDelEquipo/HeroElPoderDelEquipo";
+import { HeroFormacion } from "@/components/HeroFormacion/HeroFormacion";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <HeroQuienesSomos />
       <HeroNuestroEquipo />
       <HeroElPoderDelEquipo />
+      <HeroFormacion />
     </>
   );
 }
