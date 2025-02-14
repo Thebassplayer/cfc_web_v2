@@ -4,7 +4,7 @@ export const HeroElPoderDelEquipo = () => {
   return (
     <section className="grid h-1/2 grid-rows-3 p-4 lg:grid-cols-2 lg:grid-rows-2 lg:px-28 lg:py-14">
       <div className="row-start-1 flex flex-col justify-evenly lg:col-start-1 lg:pb-14">
-        <TitleWithLine text="El poder del equipo" />
+        <TitleWithLine text="El poder del equipo" className="ml-4" />
       </div>
       <div className="row-span-2 row-start-2 flex flex-col justify-evenly py-2 lg:col-start-1 lg:col-end-3 lg:flex-row lg:justify-center">
         <div className="flex flex-col justify-evenly lg:px-4">
