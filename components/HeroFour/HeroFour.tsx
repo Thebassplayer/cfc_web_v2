@@ -1,4 +1,4 @@
-import Pilares from "../../assets/pilares.jpg";
+import Pilares from "../../assets/pilares_del_metodo.png";
 import IconOne from "../../assets/iconos-1.png";
 import Icontwo from "../../assets/iconos-2.webp";
 import IconThree from "../../assets/iconos-3.webp";
