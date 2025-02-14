@@ -19,7 +19,7 @@ const ContactButton = ({ text, size = "sm" }: ContactButtonProps) => {
     <Link href={APP_ROUTES.CONTACT} title={text}>
       <div
         className={cm(
-          "w-fit rounded-md bg-primary-yellow text-center font-roboto font-semibold text-purple-dark transition-transform hover:scale-105 active:bg-purple-dark active:text-primary-yellow",
+          "w-fit rounded-md bg-primary-yellow text-center font-roboto font-semibold text-purple-primary transition-transform hover:scale-105 active:scale-100 active:bg-purple-primary active:text-primary-yellow",
           sizes[size],
         )}
       >

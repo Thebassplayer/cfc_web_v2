@@ -100,14 +100,14 @@ export const QuienesSomosCarousell = () => {
         </AnimatePresence>
         <button
           onClick={prevTestimonial}
-          className="absolute left-0 top-1/2 -translate-y-1/2 transform rounded-full bg-purple-primary p-2 text-white"
+          className="absolute left-0 top-1/2 -translate-y-1/2 transform rounded-full bg-purple-primary p-2 text-white transition-transform hover:scale-105 active:scale-100"
           aria-label="Previous testimonial"
         >
           <ChevronLeft size={24} />
         </button>
         <button
           onClick={nextTestimonial}
-          className="absolute right-0 top-1/2 -translate-y-1/2 transform rounded-full bg-purple-primary p-2 text-white"
+          className="absolute right-0 top-1/2 -translate-y-1/2 transform rounded-full bg-purple-primary p-2 text-white transition-transform hover:scale-105 active:scale-100"
           aria-label="Next testimonial"
         >
           <ChevronRight size={24} />
