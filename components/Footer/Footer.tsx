@@ -52,7 +52,7 @@ export const Footer = () => {
             </div>
             <div className="flex flex-col items-center">
               <h6 className="mt-3 text-center text-gray-500">
-                Déjanos tus datos para que recibir más información.
+                Déjanos tus datos para que recibir más información
               </h6>
               <button className="mt-1 rounded bg-yellow-500 px-4 py-2 font-bold text-white hover:bg-yellow-600">
                 Quiero saber más
