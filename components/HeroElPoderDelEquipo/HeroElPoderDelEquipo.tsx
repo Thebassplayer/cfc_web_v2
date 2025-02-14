@@ -9,7 +9,7 @@ export const HeroElPoderDelEquipo = () => {
       </div>
       <div className="row-span-2 row-start-2 flex flex-col justify-evenly py-2 lg:col-start-1 lg:col-end-3 lg:flex-row lg:justify-center">
         <div className="flex flex-col justify-evenly lg:px-4">
-          <p className="text-lg">
+          <p>
             La combinación de nuestras disciplinas y enfoques nos permite
             ofrecer un servicio integral y personalizado. Milagros y Albana
             aportan una visión profunda de la conciencia corporal, la

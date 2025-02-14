@@ -24,10 +24,10 @@ const team = [
 export const HeroNuestroEquipo = () => {
   return (
     <section className="flex flex-col bg-grey-light p-4 lg:flex lg:flex-col lg:px-28 lg:py-7">
-      <h1 className="col-span-2 mb-8 text-center font-sifonn text-4xl leading-none lg:text-5xl">
+      <h1 className="col-span-2 mb-8 text-center font-sifonn text-4xl leading-none text-purple-primary lg:text-5xl">
         Nuestro Equipo
       </h1>
-      <div className="mx-auto mb-16 mt-2 h-2 w-1/4 bg-primary-yellow"></div>
+      <div className="mx-auto mb-16 h-2 w-1/4 bg-primary-yellow"></div>
       <div className="flex grow flex-col">
         <Image
           src={Equipo}
@@ -45,7 +45,7 @@ export const HeroNuestroEquipo = () => {
                 {el.name}
               </h1>
               {el.bio.map((par) => (
-                <p className="mb-4 text-sm">{par}</p>
+                <p className="mb-4">{par}</p>
               ))}
             </div>
           ))}
