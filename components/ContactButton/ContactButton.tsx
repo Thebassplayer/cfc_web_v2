@@ -16,7 +16,7 @@ const sizes = {
 
 const ContactButton = ({ text, size = "sm" }: ContactButtonProps) => {
   return (
-    <Link href={APP_ROUTES.CONTACT} title={text}>
+    <Link href={"?search-modal=true"} title={text}>
       <div
         className={cm(
           "w-fit rounded-md bg-primary-yellow text-center font-roboto font-semibold text-purple-primary transition-transform hover:scale-105 active:scale-100 active:bg-purple-primary active:text-primary-yellow",

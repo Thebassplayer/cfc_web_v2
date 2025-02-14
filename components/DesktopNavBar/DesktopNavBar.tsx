@@ -23,7 +23,7 @@ export default async function DesktopNavBar({ className }: DesktopNavBarProps) {
           <Image src={Logo} alt="LOGO" height={80} />
         </Link>
       </div>
-      <NavBarButton path={APP_ROUTES.CONTACT} text="Contacto" />
+      <NavBarButton path={"?search-modal=true"} text="Contacto" />
     </nav>
   );
 }

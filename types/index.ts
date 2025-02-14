@@ -1,7 +1,7 @@
 import { RouteType } from "@/constants/routes";
 
 type NavBarButtonProps = {
-  path: RouteType;
+  path: string;
   text: string;
 };
 

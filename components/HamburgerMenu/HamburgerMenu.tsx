@@ -14,7 +14,7 @@ type HamburgerMenuProps = {
 };
 
 const MOBILE_NAV_BAR_BUTTONS: NavBarButtonProps[] = [
-  { path: APP_ROUTES.CONTACT, text: "Contacto" },
+  { path: "?search-modal=true", text: "Contacto" },
 ];
 
 const HamburgerMenu = ({ children, user, role }: HamburgerMenuProps) => {

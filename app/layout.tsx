@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import DesktopNavBar from "@/components/DesktopNavBar/DesktopNavBar";
 import MobileNavBar from "@/components/MobileNavBar/MobileNavBar";
+import { Suspense } from "react";
+import ContactModal from "@/components/ContactModal/ContactModal";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -25,6 +27,9 @@ export default function RootLayout({
         <DesktopNavBar className="row-span-1 row-start-1" />
 
         {children}
+        <Suspense fallback={<>Cargando...</>}>
+          <ContactModal />
+        </Suspense>
       </body>
     </html>
   );
