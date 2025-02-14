@@ -6,19 +6,20 @@ import Instagram from "../../assets/instagram.png";
 import Whatsapp from "../../assets/whatsapp.png";
 import Youtube from "../../assets/youtube.png";
 import BsAs from "../../assets/Group18.png";
+import ContactButton from "../ContactButton/ContactButton";
 export const Footer = () => {
   return (
     <footer className="bg-gray-100">
       <section className="mx-auto max-w-screen-xl px-4 py-5">
         <div className="mb-5 flex flex-col items-center justify-around pt-1 md:flex-row md:pt-5">
           {/* Contact Section (Right on Desktop, First on Mobile) */}
-          <div className="order-1 w-full px-4 pt-4 md:order-2 md:w-1/2">
+          <div className="order-1 w-full px-12 pt-4 md:order-2 md:w-1/2">
             <h1 className="mb-4 text-center font-bebas text-lg font-semibold">
               CONTACTANOS
             </h1>
             <div className="mb-4 flex items-center justify-between">
               <div>
-                <h6 className="text-sm">
+                <h6 className="font-bebas text-lg">
                   whatsapp <br />
                   <small className="text-gray-500">+54 9 11 3163 1727</small>
                 </h6>
@@ -35,7 +36,7 @@ export const Footer = () => {
             </div>
             <div className="mb-4 flex items-center justify-between">
               <div>
-                <h6 className="text-sm">
+                <h6 className="font-bebas text-lg">
                   e-mail <br />
                   <small className="text-gray-500">cfc.method@gmail.com</small>
                 </h6>
@@ -51,12 +52,10 @@ export const Footer = () => {
               </div>
             </div>
             <div className="flex flex-col items-center">
-              <h6 className="mt-3 text-center text-gray-500">
+              <h6 className="mt-3 text-center font-bebas text-gray-500">
                 Déjanos tus datos para que recibir más información
               </h6>
-              <button className="mt-1 rounded bg-yellow-500 px-4 py-2 font-bold text-white hover:bg-yellow-600">
-                Quiero saber más
-              </button>
+              <ContactButton text="Quiero saber mas" />
             </div>
           </div>
           {/* Social & Branding Section (Left on Desktop, Second on Mobile) */}
