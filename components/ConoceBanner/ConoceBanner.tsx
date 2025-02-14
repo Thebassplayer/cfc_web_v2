@@ -25,7 +25,7 @@ const ConoceBanner = () => {
           Formate como instructor/a o en carácter personal
         </p>
         <div className="space-x-4">
-          <ContactButton text={"Comenzar"} />
+          <ContactButton text={"Comenzar"} size="md" />
         </div>
       </div>
     </div>

@@ -28,7 +28,7 @@ export const HeroPortada = () => {
             Reconoce y supera tus límites a través del movimiento consciente
           </p>
           <div className="flex w-full lg:block">
-            <ContactButton text={"Quiero saber mas"} />
+            <ContactButton text={"Quiero saber mas"} size="md" />
           </div>
         </div>
       </div>
