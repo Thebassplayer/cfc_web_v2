@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Equipo from "../../assets/equipo.jpg";
+import TitleWithLine from "../TitleWithLine/TitleWithLine";
 
 const team = [
   {
@@ -24,10 +25,7 @@ const team = [
 export const HeroNuestroEquipo = () => {
   return (
     <section className="flex flex-col bg-grey-light p-4 lg:flex lg:flex-col lg:px-28 lg:py-7">
-      <h1 className="col-span-2 mb-8 text-center font-sifonn text-4xl leading-none text-purple-primary lg:text-5xl">
-        Nuestro Equipo
-      </h1>
-      <div className="mx-auto mb-16 h-2 w-1/4 bg-primary-yellow"></div>
+      <TitleWithLine text="Nuestro equipo" />
       <div className="flex grow flex-col">
         <Image
           src={Equipo}

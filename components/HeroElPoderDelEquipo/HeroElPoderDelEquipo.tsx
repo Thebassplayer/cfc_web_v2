@@ -1,11 +1,10 @@
+import TitleWithLine from "../TitleWithLine/TitleWithLine";
+
 export const HeroElPoderDelEquipo = () => {
   return (
     <section className="grid h-1/2 grid-rows-3 p-4 lg:grid-cols-2 lg:grid-rows-2 lg:px-28 lg:py-14">
       <div className="row-start-1 flex flex-col justify-evenly lg:col-start-1 lg:pb-14">
-        <h1 className="font-sifonn text-3xl leading-none text-purple-primary lg:text-4xl">
-          El Poder del Equipo
-        </h1>
-        <div className="my-2 h-2 w-2/5 bg-primary-yellow"></div>
+        <TitleWithLine text="El poder del equipo" />
       </div>
       <div className="row-span-2 row-start-2 flex flex-col justify-evenly py-2 lg:col-start-1 lg:col-end-3 lg:flex-row lg:justify-center">
         <div className="flex flex-col justify-evenly lg:px-4">
