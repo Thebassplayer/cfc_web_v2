@@ -25,9 +25,9 @@ const HeroThreeCard = ({ image, title, text }: HeroThreeCardProps) => {
         </div>
         <div>
           <Link
-            href={APP_ROUTES.CONTACT}
+            href={"?search-modal=true"}
             title="Quiero saber mas"
-            className="text-purple-light"
+            className="text-purple-light hover:underline"
           >
             Mas Info
           </Link>
