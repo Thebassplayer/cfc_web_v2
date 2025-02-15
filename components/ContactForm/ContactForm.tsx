@@ -6,6 +6,7 @@ import {
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { SubmitButton } from "../SubmitButton/submit-button";
 import { toFormikValidationSchema } from "zod-formik-adapter";
+import useContact from "@/hooks/useContact/useContact";
 
 const initialValues = {
   name: "",
@@ -14,9 +15,13 @@ const initialValues = {
 };
 
 const ContactForm = () => {
+  const { contact, contactButtonValue, error, loading, success } = useContact();
   const handleSubmit = async (values: ContactFormValues) => {
     console.log("values", values);
+    await contact(values);
   };
+
+  const buttonValue = contactButtonValue({ loading, success, error });
   return (
     <Formik
       initialValues={initialValues}
@@ -27,8 +32,8 @@ const ContactForm = () => {
         <Form
           className="animate-in text-foreground row-start-4 flex h-min w-[800px] flex-col justify-center gap-2 rounded-md border bg-white p-4"
           onClick={(e) => {
-            e.preventDefault();
             e.stopPropagation();
+            e.preventDefault();
           }}
         >
           <div className="mb-2 flex flex-col">
@@ -90,7 +95,7 @@ const ContactForm = () => {
           </div>
           <SubmitButton
             className="text-foreground mb-2 rounded-md bg-primary-yellow px-4 py-2 font-roboto text-purple-primary transition-transform hover:bg-purple-primary hover:text-primary-yellow active:scale-95 active:bg-purple-primary active:text-primary-yellow"
-            pendingText="Enviando..."
+            text={buttonValue}
           >
             Enviar
           </SubmitButton>

@@ -5,28 +5,19 @@ import { type ComponentProps } from "react";
 import { cm } from "@/utils/classMerge";
 
 type Props = ComponentProps<"button"> & {
-  pendingText?: string;
+  text?: string;
   className?: string;
 };
 
-export function SubmitButton({
-  children,
-  pendingText,
-  className,
-  ...props
-}: Props) {
-  const { pending, action } = useFormStatus();
-
-  const isPending = pending && action === props.formAction;
-
+export function SubmitButton({ children, text, className, ...props }: Props) {
   return (
     <button
       {...props}
       className={cm(className, "text-sm lg:text-base")}
       type="submit"
-      aria-disabled={pending}
+      disabled={text === "Enviando..." || text === "Enviado"}
     >
-      {isPending ? pendingText : children}
+      {text}
     </button>
   );
 }
