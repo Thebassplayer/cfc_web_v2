@@ -89,7 +89,7 @@ const ContactForm = () => {
             />
           </div>
           <SubmitButton
-            className="text-foreground mb-2 rounded-md bg-purple-extralight px-4 py-2 hover:bg-black hover:text-white hover:ring-2  hover:ring-purple-extralight"
+            className="text-foreground mb-2 rounded-md bg-primary-yellow px-4 py-2 font-roboto text-purple-primary transition-transform hover:bg-purple-primary hover:text-primary-yellow active:scale-95 active:bg-purple-primary active:text-primary-yellow"
             pendingText="Enviando..."
           >
             Enviar
