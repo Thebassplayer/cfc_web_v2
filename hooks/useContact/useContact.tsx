@@ -18,21 +18,20 @@ const useContact = () => {
       setLoading(true);
       const response = await fetch(contactApi, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
       if (!response.ok) {
-        setLoading(false);
-        setSuccess(false);
         setError(true);
-        const error = await response.json();
+        setSuccess(false);
+      } else {
+        setSuccess(true);
       }
     } catch (error) {
-      setLoading(false);
-      setSuccess(false);
       setError(true);
+      setSuccess(false);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -46,13 +45,13 @@ const useContact = () => {
     error: boolean;
   }) => {
     if (loading) {
-      return "Loading...";
+      return "Enviando...";
     } else if (success) {
-      return "Subscribed!";
+      return "Enviado!";
     } else if (error) {
-      return "Failed to subscribe";
+      return "Error al enviar tu mensaje";
     } else {
-      return "Subscribe";
+      return "Enviar";
     }
   };
 
