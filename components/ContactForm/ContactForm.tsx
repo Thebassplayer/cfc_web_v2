@@ -69,6 +69,7 @@ const ContactForm = () => {
           e.stopPropagation();
           e.preventDefault();
         }}
+        className="flex h-full w-full items-center justify-center px-4 lg:px-0"
       >
         <Formik
           initialValues={initialValues}
@@ -77,7 +78,7 @@ const ContactForm = () => {
           )}
           onSubmit={handleSubmit}
         >
-          <Form className="animate-in text-foreground row-start-4 flex h-min w-[800px] flex-col justify-center gap-2 rounded-md border bg-white p-4">
+          <Form className="animate-in text-foreground row-start-4 flex h-min w-full flex-col justify-center gap-2 rounded-md border bg-white p-4 lg:w-[800px]">
             <div className="flex justify-end">
               <Link href={pathname}>
                 <p className="text-xl">x</p>
