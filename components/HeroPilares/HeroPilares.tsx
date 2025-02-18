@@ -34,7 +34,7 @@ const pilares = [
 
 export const HeroPilares = () => {
   return (
-    <section className="grid grid-rows-3 p-4 lg:flex lg:flex-col lg:px-28 lg:py-7">
+    <section className="p-4 lg:flex lg:flex-col lg:px-28 lg:py-7">
       <div className="flex h-1/5 w-full flex-col justify-center">
         <h1 className="col-span-2 text-center font-sifonn text-4xl leading-none text-purple-primary lg:text-5xl">
           Pilares de conciencia y
@@ -46,7 +46,7 @@ export const HeroPilares = () => {
       <Image
         src={Pilares}
         alt="Dos mujeres sorientes, practicando CFC"
-        className="my-8 h-[700px] object-scale-down"
+        className="my-8 object-scale-down lg:h-[700px]"
       />
       <div className="row-span-2 row-start-2 flex flex-col justify-evenly py-2 lg:flex lg:flex-row lg:justify-center">
         {pilares.map((el, idx) => (
