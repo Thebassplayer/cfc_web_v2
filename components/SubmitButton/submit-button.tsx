@@ -8,17 +8,24 @@ import { useFormikContext } from "formik";
 type Props = ComponentProps<"button"> & {
   text?: string;
   className?: string;
+  disabled?: boolean;
 };
 
-export function SubmitButton({ children, text, className, ...props }: Props) {
+export function SubmitButton({
+  children,
+  text,
+  disabled,
+  className,
+  ...props
+}: Props) {
   const { submitForm } = useFormikContext();
   return (
     <button
       {...props}
-      className={cm(className, "text-sm lg:text-base")}
+      className={cm(className, "text-sm disabled:opacity-50 lg:text-base")}
       type="button"
       onClick={submitForm}
-      disabled={text === "Enviando..." || text === "Enviado"}
+      disabled={disabled}
     >
       {text}
     </button>
