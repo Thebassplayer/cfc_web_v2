@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-import Mili from "../../assets/mili.webp";
+import Mili from "../../assets/mili_2.jpeg";
 import Albu from "../../assets/albu.jpg";
 const staff = [
   {
@@ -77,24 +77,24 @@ export const QuienesSomosCarousell = () => {
             animate="center"
             exit="exit"
             transition={{ duration: 0.5 }}
-            className="flex h-full gap-8 px-32 lg:flex"
+            className="h-full flex-col gap-8 lg:flex lg:flex-row lg:px-32"
           >
-            <div className="w-full lg:w-1/2">
+            <div className="h-1/2 w-full lg:flex lg:h-auto lg:w-1/2">
               <Image
                 src={staff[currentIndex].img || "/placeholder.svg"}
                 alt={staff[currentIndex].name}
                 className="h-full object-scale-down"
               />
             </div>
-            <div className="flex w-full flex-col justify-start pb-8 lg:w-4/6">
-              <h2 className="my-4 font-sifonn text-4xl leading-none text-purple-primary lg:mt-0">
+            <div className="flex h-1/2 w-full flex-col justify-start pb-8 lg:w-4/6">
+              <h2 className="my-4 font-sifonn text-2xl leading-none text-purple-primary lg:mt-0 lg:text-4xl">
                 {staff[currentIndex].name}
               </h2>
               <div className="overflow-y-auto">
                 {staff[currentIndex].bio.map((paragraph, index) => (
                   <p
                     key={index}
-                    className="mb-4 pr-8 text-justify text-lg text-white"
+                    className="mb-4 pr-8 text-justify  text-sm text-white lg:text-base"
                   >
                     {paragraph}
                   </p>
