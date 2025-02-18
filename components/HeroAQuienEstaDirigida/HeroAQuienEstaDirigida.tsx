@@ -100,18 +100,18 @@ export const HeroAQuienEstaDirigida = () => {
               transition={{ duration: 0.5 }}
               className="lg:flex"
             >
-              <div className="mx-10 flex flex-1 grow flex-col pt-4 md:mx-24">
+              <div className="mx-12 flex flex-1 grow flex-col pt-4 md:mx-24">
                 <Image
                   src={cards[currentIndex].image}
                   alt={cards[currentIndex].title}
                   className="mb-8 aspect-square w-full rounded-2xl object-cover shadow-md shadow-black"
                 />
                 <div className="flex grow flex-col justify-between">
-                  <div>
-                    <h2 className="font-bebas text-xl leading-none text-purple-light lg:pb-4 lg:text-2xl">
+                  <div className="flex grow flex-col justify-between">
+                    <h2 className="pb-2 font-bebas text-lg leading-none text-purple-light lg:text-2xl">
                       {cards[currentIndex].title}
                     </h2>
-                    <p className="overflow-y-auto text-xs lg:text-sm">
+                    <p className="overflow-y-auto pb-2 text-xs lg:text-sm">
                       {cards[currentIndex].text}
                     </p>
                   </div>
@@ -119,7 +119,7 @@ export const HeroAQuienEstaDirigida = () => {
                     <Link
                       href={"?search-modal=true"}
                       title="Quiero saber mas"
-                      className="text-purple-light hover:underline"
+                      className="text-sm text-purple-light hover:underline lg:text-lg"
                     >
                       Mas Info
                     </Link>
