@@ -12,18 +12,16 @@ const ContactModal = () => {
   return (
     <>
       {searchModal && (
-        <Link href={pathname} className="fixed inset-0 z-50 cursor-default">
-          <div
-            className="fixed left-1/2 z-50 flex h-screen w-screen -translate-x-1/2 justify-center bg-black bg-opacity-50 py-20"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="search-modal-title"
-          >
-            <GoogleRecaptchaWrapper>
-              <ContactForm />
-            </GoogleRecaptchaWrapper>
-          </div>
-        </Link>
+        <div
+          className="fixed inset-0 left-1/2 z-50 flex h-screen w-screen -translate-x-1/2 justify-center bg-black bg-opacity-50 py-20"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="search-modal-title"
+        >
+          <GoogleRecaptchaWrapper>
+            <ContactForm />
+          </GoogleRecaptchaWrapper>
+        </div>
       )}
     </>
   );
