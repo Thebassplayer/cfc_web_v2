@@ -25,7 +25,7 @@ const cards = [
 
 export const HeroAQuienEstaDirigida = () => {
   return (
-    <section className="grid h-full grid-rows-3 bg-grey-light p-4 lg:grid-cols-3 lg:grid-rows-5 lg:px-28 lg:py-14">
+    <section className="h-full grid-rows-3 bg-grey-light p-4 lg:grid lg:grid-cols-3 lg:grid-rows-5 lg:px-28 lg:py-14">
       <div className="row-start-1 flex flex-col lg:col-start-1 lg:pb-10">
         <h1 className="my-0 font-sifonn text-4xl leading-none text-purple-primary lg:text-5xl">
           ¿A
