@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import DesktopNavBar from "@/components/DesktopNavBar/DesktopNavBar";
-import MobileNavBar from "@/components/MobileNavBar/MobileNavBar";
 import { Suspense } from "react";
 import ContactModal from "@/components/ContactModal/ContactModal";
 
