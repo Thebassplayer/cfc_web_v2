@@ -3,6 +3,7 @@ import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import React from "react";
 import ContactForm from "../ContactForm/ContactForm";
+import GoogleRecaptchaWrapper from "@/app/googleRecaptchaWrapper";
 
 const ContactModal = () => {
   const pathname = usePathname();
@@ -18,7 +19,9 @@ const ContactModal = () => {
             aria-modal="true"
             aria-labelledby="search-modal-title"
           >
-            <ContactForm />
+            <GoogleRecaptchaWrapper>
+              <ContactForm />
+            </GoogleRecaptchaWrapper>
           </div>
         </Link>
       )}
