@@ -1,6 +1,6 @@
 export const HeroEstudiaAnatomia = () => {
   return (
-    <section className="grid h-3/4 grid-rows-3 p-4 lg:grid-cols-2 lg:grid-rows-2 lg:px-28 lg:py-14">
+    <section className="grid grid-rows-3 p-4 lg:h-3/4 lg:grid-cols-2 lg:grid-rows-2 lg:px-28 lg:py-14">
       <div className="row-start-1 flex flex-col justify-evenly lg:col-start-1 lg:pb-14">
         <h1 className="font-sifonn text-3xl leading-none text-purple-primary lg:text-4xl">
           “Estudia anatomía y transforma tu conexión cuerpo-mente con CFC
@@ -13,7 +13,7 @@ export const HeroEstudiaAnatomia = () => {
           <h1 className="font-bebas text-2xl leading-none text-purple-light lg:pb-4">
             “Construye una base fuerte y flexible con nuestro método”
           </h1>
-          <p className="text-sm">
+          <p className="text-xs lg:text-base">
             Sumergite en el conocimiento anatómico y descubre cómo puede
             transformar tu práctica. En CFC, te brindamos herramientas para
             entender el funcionamiento de tu organismo desde una perspectiva
