@@ -46,7 +46,7 @@ export const HeroNuestroEquipo = () => {
                 {el.name}
               </h1>
               {el.bio.map((par, idx) => (
-                <p className="mb-4" key={idx}>
+                <p className="mb-4 text-sm lg:text-base" key={idx}>
                   {par}
                 </p>
               ))}

@@ -7,7 +7,7 @@ export const HeroElPoderDelEquipo = () => {
         <TitleWithLine text="El poder del equipo" className="lg:ml-4" />
       </div>
       <div className="row-span-2 row-start-2 flex flex-col justify-evenly py-2 lg:col-start-1 lg:col-end-3 lg:flex-row lg:justify-center">
-        <div className="flex flex-col justify-evenly lg:px-4">
+        <div className="flex flex-col justify-evenly text-sm lg:px-4 lg:text-base">
           <p>
             La combinación de nuestras disciplinas y enfoques nos permite
             ofrecer un servicio integral y personalizado. Milagros y Albana
