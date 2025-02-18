@@ -49,8 +49,11 @@ export const HeroPilares = () => {
         className="my-8 h-[700px] object-scale-down"
       />
       <div className="row-span-2 row-start-2 flex flex-col justify-evenly py-2 lg:flex lg:flex-row lg:justify-center">
-        {pilares.map((el) => (
-          <div className="flex flex-col justify-evenly lg:block lg:w-1/4 lg:px-6">
+        {pilares.map((el, idx) => (
+          <div
+            className="flex flex-col justify-evenly lg:block lg:w-1/4 lg:px-6"
+            key={idx}
+          >
             <Image
               src={el.icon}
               alt={`Icono ${el.id}`}

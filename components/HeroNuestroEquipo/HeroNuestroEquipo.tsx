@@ -37,13 +37,18 @@ export const HeroNuestroEquipo = () => {
         />
 
         <div className="row-span-2 row-start-2 flex flex-col justify-evenly py-2 lg:col-start-1 lg:col-end-3 lg:flex-row lg:justify-center">
-          {team.map((el) => (
-            <div className="flex flex-col justify-evenly lg:block lg:w-1/2 lg:px-4">
+          {team.map((el, idx) => (
+            <div
+              className="flex flex-col justify-evenly lg:block lg:w-1/2 lg:px-4"
+              key={idx}
+            >
               <h1 className="font-bebas text-2xl leading-none text-purple-light lg:pb-4">
                 {el.name}
               </h1>
-              {el.bio.map((par) => (
-                <p className="mb-4">{par}</p>
+              {el.bio.map((par, idx) => (
+                <p className="mb-4" key={idx}>
+                  {par}
+                </p>
               ))}
             </div>
           ))}
