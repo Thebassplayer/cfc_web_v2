@@ -2,7 +2,7 @@ import ConoceBanner from "../ConoceBanner/ConoceBanner";
 
 export const HeroBeneficios = () => {
   return (
-    <section className="grid h-full grid-rows-3 p-4 lg:flex lg:flex-col lg:px-28 lg:py-7">
+    <section className="p-4 lg:flex lg:h-full lg:flex-col lg:px-28 lg:py-7">
       <ConoceBanner />
       <div className="row-start-1 mt-8 flex flex-col justify-evenly lg:col-start-1 lg:pb-14">
         <h1 className="font-sifonn text-3xl leading-none text-purple-primary lg:text-4xl">
@@ -10,7 +10,7 @@ export const HeroBeneficios = () => {
         </h1>
         <div className="my-2 h-2 w-2/5 bg-primary-yellow"></div>
       </div>
-      <div className="row-span-2 row-start-2 flex flex-col justify-evenly py-2 lg:col-start-1 lg:col-end-3 lg:flex-row lg:justify-center">
+      <div className="row-span-2 row-start-2 flex flex-col justify-evenly gap-8 py-2 lg:col-start-1 lg:col-end-3 lg:flex-row lg:justify-center lg:gap-0">
         <div className="flex flex-col justify-evenly lg:block lg:w-1/3 lg:px-4">
           <h1 className="font-bebas text-2xl leading-none text-purple-light lg:pb-4">
             Beneficios físicos
