@@ -61,7 +61,7 @@ export const HeroAQuienEstaDirigida = () => {
   };
   return (
     <section className="flex h-full flex-col bg-grey-light p-4 lg:grid lg:grid-cols-3 lg:grid-rows-5 lg:px-28 lg:py-14">
-      <div className="row-start-1 hidden flex-col text-5xl lg:col-start-1 lg:flex lg:pb-10">
+      <div className="row-start-1 hidden flex-col text-5xl md:col-start-1 md:flex md:pb-10">
         <h1 className="my-0 font-sifonn  leading-none text-purple-primary">
           ¿A
           <span className="text-primary-yellow"> quien</span>
@@ -73,7 +73,7 @@ export const HeroAQuienEstaDirigida = () => {
           la practica?
         </h1>
       </div>
-      <h1 className="my-0 font-sifonn text-3xl leading-none text-purple-primary lg:hidden">
+      <h1 className="my-0 font-sifonn text-3xl leading-none text-purple-primary md:hidden">
         ¿A <span className="text-primary-yellow"> quien</span> esta dirigida la
         practica?
       </h1>
@@ -100,7 +100,7 @@ export const HeroAQuienEstaDirigida = () => {
               transition={{ duration: 0.5 }}
               className="lg:flex"
             >
-              <div className="mx-10 flex flex-1 grow flex-col pt-4 lg:mx-14">
+              <div className="mx-10 flex flex-1 grow flex-col pt-4 md:mx-24">
                 <Image
                   src={cards[currentIndex].image}
                   alt={cards[currentIndex].title}
