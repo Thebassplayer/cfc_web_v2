@@ -63,102 +63,92 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="flex h-full w-full items-center justify-center">
-      <div
-        onClick={(e) => {
-          e.stopPropagation();
-          e.preventDefault();
-        }}
-        className="flex h-full w-full items-center justify-center px-4 lg:px-0"
+    <div className="flex h-full w-full items-center justify-center px-4 lg:px-0">
+      <Formik
+        initialValues={initialValues}
+        validationSchema={toFormikValidationSchema(contactFormValidationSchema)}
+        onSubmit={handleSubmit}
       >
-        <Formik
-          initialValues={initialValues}
-          validationSchema={toFormikValidationSchema(
-            contactFormValidationSchema,
-          )}
-          onSubmit={handleSubmit}
-        >
-          <Form className="animate-in text-foreground row-start-4 flex h-min w-full flex-col justify-center gap-2 rounded-md border bg-white p-4 lg:w-[800px]">
-            <div className="flex justify-end">
-              <Link href={pathname}>
-                <p className="text-xl">x</p>
-              </Link>
-            </div>
-            <div className="mb-2 flex flex-col">
-              <label className="lg:text-md text-sm" htmlFor="name">
-                Nombre
-              </label>
-              <Field
-                name="name"
-                type="text"
-                placeholder="Tu nombre"
-                className="rounded-md border bg-inherit px-4 py-2 text-sm lg:text-base"
-                disabled={loading || success}
-              />
-              <ErrorMessage
-                name="name"
-                render={(errorMsg) => (
-                  <p className="font-lexend text-xxs text-red-600 lg:text-xs">
-                    {errorMsg}
-                  </p>
-                )}
-              />
-            </div>
-            <div className="mb-2 flex flex-col">
-              <label className="lg:text-md text-sm" htmlFor="email">
-                Email
-              </label>
-              <Field
-                name="email"
-                type="email"
-                placeholder="soy@flexible.com"
-                className="rounded-md border bg-inherit px-4 py-2 text-sm lg:text-base"
-                disabled={loading || success}
-              />
-              <ErrorMessage
-                name="email"
-                render={(errorMsg) => (
-                  <p className="font-lexend text-xxs text-red-600 lg:text-xs">
-                    {errorMsg}
-                  </p>
-                )}
-              />
-            </div>
-            <div className="mb-2 flex flex-col">
-              <label className="lg:text-md text-sm" htmlFor="message">
-                Mensaje
-              </label>
-              <Field
-                name="message"
-                as="textarea"
-                placeholder="Escribe tu mensaje"
-                className="rounded-md border bg-inherit px-4 py-2 text-sm lg:text-base"
-                disabled={loading || success}
-              />
-              <ErrorMessage
-                name="message"
-                render={(errorMsg) => (
-                  <p className="font-lexend text-xxs text-red-600 lg:text-xs">
-                    {errorMsg}
-                  </p>
-                )}
-              />
-            </div>
-            <SubmitButton
-              className={cm(
-                "text-foreground mb-2 rounded-md bg-primary-yellow px-4 py-2 font-roboto text-purple-primary transition-transform ",
-                loading || success
-                  ? "cursor-not-allowed"
-                  : "cursor-pointer hover:bg-purple-primary hover:text-primary-yellow active:scale-95 active:bg-purple-primary active:text-primary-yellow",
-              )}
-              text={feedback ? feedback : "Enviar"}
+        <Form className="animate-in text-foreground row-start-4 flex h-min w-full flex-col justify-center gap-2 rounded-md border bg-white p-4 lg:w-[800px]">
+          <div className="flex justify-end">
+            <Link href={pathname}>
+              <p className="text-xl">x</p>
+            </Link>
+          </div>
+          <div className="mb-2 flex flex-col">
+            <label className="lg:text-md text-sm" htmlFor="name">
+              Nombre
+            </label>
+            <Field
+              name="name"
+              type="text"
+              placeholder="Tu nombre"
+              className="rounded-md border bg-inherit px-4 py-2 text-sm lg:text-base"
               disabled={loading || success}
-            >
-              Enviar
-            </SubmitButton>
-          </Form>
-        </Formik>
-      </div>
+            />
+            <ErrorMessage
+              name="name"
+              render={(errorMsg) => (
+                <p className="font-lexend text-xxs text-red-600 lg:text-xs">
+                  {errorMsg}
+                </p>
+              )}
+            />
+          </div>
+          <div className="mb-2 flex flex-col">
+            <label className="lg:text-md text-sm" htmlFor="email">
+              Email
+            </label>
+            <Field
+              name="email"
+              type="email"
+              placeholder="soy@flexible.com"
+              className="rounded-md border bg-inherit px-4 py-2 text-sm lg:text-base"
+              disabled={loading || success}
+            />
+            <ErrorMessage
+              name="email"
+              render={(errorMsg) => (
+                <p className="font-lexend text-xxs text-red-600 lg:text-xs">
+                  {errorMsg}
+                </p>
+              )}
+            />
+          </div>
+          <div className="mb-2 flex flex-col">
+            <label className="lg:text-md text-sm" htmlFor="message">
+              Mensaje
+            </label>
+            <Field
+              name="message"
+              as="textarea"
+              placeholder="Escribe tu mensaje"
+              className="rounded-md border bg-inherit px-4 py-2 text-sm lg:text-base"
+              disabled={loading || success}
+            />
+            <ErrorMessage
+              name="message"
+              render={(errorMsg) => (
+                <p className="font-lexend text-xxs text-red-600 lg:text-xs">
+                  {errorMsg}
+                </p>
+              )}
+            />
+          </div>
+          <SubmitButton
+            className={cm(
+              "text-foreground mb-2 rounded-md bg-primary-yellow px-4 py-2 font-roboto text-purple-primary transition-transform ",
+              loading || success
+                ? "cursor-not-allowed"
+                : "cursor-pointer hover:bg-purple-primary hover:text-primary-yellow active:scale-95 active:bg-purple-primary active:text-primary-yellow",
+            )}
+            text={feedback ? feedback : "Enviar"}
+            disabled={loading || success}
+          >
+            Enviar
+          </SubmitButton>
+        </Form>
+      </Formik>
     </div>
   );
 };

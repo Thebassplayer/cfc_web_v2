@@ -9,7 +9,7 @@ type ContactButtonProps = {
 };
 
 const sizes = {
-  sm: "text-lg px-4 py-2",
+  sm: "text-base px-4 py-2",
   md: "text-xl px-6 py-3",
   lg: "text-2xl px-8 py-4",
 };
