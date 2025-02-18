@@ -90,7 +90,7 @@ export const QuienesSomosCarousell = () => {
               <h2 className="my-4 font-sifonn text-4xl leading-none text-purple-primary lg:mt-0">
                 {staff[currentIndex].name}
               </h2>
-              <div className="overflow-y-scroll">
+              <div className="overflow-y-auto">
                 {staff[currentIndex].bio.map((paragraph, index) => (
                   <p
                     key={index}
