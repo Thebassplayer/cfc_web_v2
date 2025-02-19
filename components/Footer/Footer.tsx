@@ -7,6 +7,7 @@ import Whatsapp from "../../assets/whatsapp.png";
 import Youtube from "../../assets/youtube.png";
 import BsAs from "../../assets/Group18.png";
 import ContactButton from "../ContactButton/ContactButton";
+import Link from "next/link";
 export const Footer = () => {
   return (
     <footer className="bg-gray-100">
@@ -25,30 +26,38 @@ export const Footer = () => {
                 </h6>
               </div>
               <div className="flex items-center justify-center">
-                <Image
-                  src={Whatsapp}
-                  alt="+54 9 11 3163 1727"
-                  width="35"
-                  height="35"
-                  className="mx-auto"
-                />
+                <Link
+                  href="https://wa.me/5491131631727"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    src={Whatsapp}
+                    alt="+54 9 11 3163 1727"
+                    width="35"
+                    height="35"
+                    className="mx-auto"
+                  />
+                </Link>
               </div>
             </div>
             <div className="mb-4 flex items-center justify-between">
               <div>
                 <h6 className="font-bebas text-lg">
                   e-mail <br />
-                  <small className="text-gray-500">cfc.method@gmail.com</small>
+                  <small className="text-gray-500">info@cfcmethod.com</small>
                 </h6>
               </div>
               <div className="flex items-center justify-center">
-                <Image
-                  src={Email}
-                  alt="cfc.method@gmail.com"
-                  width="35"
-                  height="30"
-                  className="mx-auto"
-                />
+                <Link href="mailto:info@cfcmethod.com">
+                  <Image
+                    src={Email}
+                    alt="info@cfcmethod.com"
+                    width="35"
+                    height="30"
+                    className="mx-auto"
+                  />
+                </Link>
               </div>
             </div>
             <div className="flex flex-col items-center">
@@ -75,13 +84,18 @@ export const Footer = () => {
                 height="40"
                 className="mx-auto"
               />
-              <Image
-                src={Instagram}
-                alt="Instagram"
-                width="40"
-                height="40"
-                className="mx-auto"
-              />
+              <Link
+                href={"https://www.instagram.com/cfc.metodo"}
+                target="_blank"
+              >
+                <Image
+                  src={Instagram}
+                  alt="Instagram"
+                  width="40"
+                  height="40"
+                  className="mx-auto"
+                />
+              </Link>
             </div>
             <div className="text-center">
               <h4 className="my-4 text-gray-500">
