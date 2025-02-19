@@ -12,7 +12,7 @@ export const HeroEstudiaAnatomia = () => {
       </div>
       <div className="row-span-2 row-start-2 flex flex-col gap-8 py-2 lg:col-start-1 lg:col-end-3 lg:flex-row lg:justify-center">
         <div className="flex flex-col justify-evenly lg:block lg:w-1/2 lg:px-4">
-          <h1 className="font-bebas text-2xl leading-none text-purple-light lg:pb-4">
+          <h1 className="pb-4 font-bebas text-2xl leading-none text-purple-light">
             “Construye una base fuerte y flexible con nuestro método”
           </h1>
           <p className="text-xs lg:text-base">
@@ -25,7 +25,7 @@ export const HeroEstudiaAnatomia = () => {
           </p>
         </div>
         <div className="flex flex-col justify-evenly lg:block lg:w-1/2 lg:px-4">
-          <h1 className="font-bebas text-2xl leading-none text-purple-light lg:pb-4">
+          <h1 className="pb-4 font-bebas text-2xl leading-none text-purple-light">
             ¿Qué es y para qué sirve?
           </h1>
           <p className="mb-4 text-xs lg:text-base">
