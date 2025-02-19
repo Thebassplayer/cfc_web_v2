@@ -87,7 +87,7 @@ export const QuienesSomosCarousell = () => {
               />
             </div>
             <div className="flex h-1/2 w-full flex-col justify-start pb-8 lg:w-4/6">
-              <h2 className="my-4 font-sifonn text-2xl leading-none text-purple-primary lg:mt-0 lg:text-4xl">
+              <h2 className="my-4 text-center font-sifonn text-2xl leading-none text-purple-primary lg:mt-0 lg:text-left lg:text-4xl">
                 {staff[currentIndex].name}
               </h2>
               <div className="overflow-y-auto">
