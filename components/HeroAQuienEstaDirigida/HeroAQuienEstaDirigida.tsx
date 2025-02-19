@@ -63,7 +63,7 @@ export const HeroAQuienEstaDirigida = () => {
   return (
     <SectionFrame className="flex flex-col bg-grey-light lg:grid lg:grid-cols-3 lg:grid-rows-5">
       <div className="row-start-1 hidden flex-col text-5xl md:col-start-1 md:flex md:pb-10">
-        <h1 className="my-0 font-sifonn  leading-none text-purple-primary">
+        <h1 className="my-0 font-sifonn leading-none text-purple-primary">
           ¿A
           <span className="text-primary-yellow"> quien</span>
         </h1>

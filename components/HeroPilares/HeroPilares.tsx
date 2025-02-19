@@ -36,11 +36,11 @@ const pilares = [
 export const HeroPilares = () => {
   return (
     <SectionFrame className="h-auto lg:flex lg:flex-col">
-      <div className="flex h-1/5 w-full flex-col justify-center">
-        <h1 className="col-span-2 text-center font-sifonn text-4xl leading-none text-purple-primary lg:text-5xl">
+      <div className="flex h-1/5 w-full flex-col justify-center *:text-3xl *:lg:text-5xl">
+        <h1 className="col-span-2 text-center font-sifonn  leading-none text-purple-primary">
           Pilares de conciencia y
         </h1>
-        <h1 className="col-span-2 text-center font-sifonn text-4xl leading-none text-purple-primary lg:pb-4 lg:text-5xl">
+        <h1 className="col-span-2 text-center font-sifonn leading-none text-purple-primary lg:pb-4">
           flexibilidad corporal
         </h1>
       </div>
@@ -60,10 +60,10 @@ export const HeroPilares = () => {
               alt={`Icono ${el.id}`}
               className="mx-auto mb-8 size-24"
             />
-            <h1 className="text-center font-bebas text-2xl leading-none text-purple-light lg:pb-4">
+            <h1 className="pb-4 text-center font-bebas text-2xl leading-none text-purple-light">
               {el.title}
             </h1>
-            <p className="mb-4">{el.text}</p>
+            <p className="mb-4 text-xs">{el.text}</p>
           </div>
         ))}
       </div>

@@ -131,7 +131,9 @@ const TestimonialsCarousell = () => {
               <p className="mb-4 font-sifonn text-xl leading-none text-purple-primary">
                 {testimonies[currentIndex].age} años
               </p>
-              <p>{testimonies[currentIndex].testimony}</p>
+              <p className="text-xs md:text-base">
+                {testimonies[currentIndex].testimony}
+              </p>
             </div>
           </motion.div>
         </AnimatePresence>
