@@ -1,4 +1,4 @@
-import PortadaDesktop from "@/assets/imagen-portada.png";
+import PortadaDesktop from "@/assets/portada_desktop.png";
 import PortadaMovile from "@/assets/fondo-hero1-mobile.png";
 import Image from "next/image";
 import ContactButton from "../ContactButton/ContactButton";
@@ -10,7 +10,7 @@ export const HeroPortada = () => {
         <Image
           src={PortadaDesktop}
           alt="Portada"
-          className="hidden scale-125 object-scale-down lg:block"
+          className="hidden object-scale-down lg:block"
         />
         <Image
           src={PortadaMovile}
