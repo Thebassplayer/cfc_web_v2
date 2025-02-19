@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Equipo from "../../assets/equipo.jpg";
 import TitleWithLine from "../TitleWithLine/TitleWithLine";
+import SectionFrame from "../SectionFrame/SectionFrame";
 
 const team = [
   {
@@ -24,7 +25,7 @@ const team = [
 
 export const HeroNuestroEquipo = () => {
   return (
-    <section className="flex flex-col bg-grey-light p-4 lg:flex lg:flex-col lg:px-28 lg:py-7">
+    <SectionFrame className="flex h-auto flex-col bg-grey-light lg:flex lg:flex-col">
       <TitleWithLine text="Nuestro equipo" />
       <div className="flex grow flex-col">
         <Image
@@ -54,6 +55,6 @@ export const HeroNuestroEquipo = () => {
           ))}
         </div>
       </div>
-    </section>
+    </SectionFrame>
   );
 };

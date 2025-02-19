@@ -4,6 +4,7 @@ import Icontwo from "../../assets/iconos-2.webp";
 import IconThree from "../../assets/iconos-3.webp";
 import IconFour from "../../assets/iconos-4.png";
 import Image from "next/image";
+import SectionFrame from "../SectionFrame/SectionFrame";
 
 const pilares = [
   {
@@ -34,7 +35,7 @@ const pilares = [
 
 export const HeroPilares = () => {
   return (
-    <section className="p-4 lg:flex lg:flex-col lg:px-28 lg:py-7">
+    <SectionFrame className="h-auto lg:flex lg:flex-col">
       <div className="flex h-1/5 w-full flex-col justify-center">
         <h1 className="col-span-2 text-center font-sifonn text-4xl leading-none text-purple-primary lg:text-5xl">
           Pilares de conciencia y
@@ -66,6 +67,6 @@ export const HeroPilares = () => {
           </div>
         ))}
       </div>
-    </section>
+    </SectionFrame>
   );
 };

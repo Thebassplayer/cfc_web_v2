@@ -1,8 +1,9 @@
 import ConoceBanner from "../ConoceBanner/ConoceBanner";
+import SectionFrame from "../SectionFrame/SectionFrame";
 
 export const HeroBeneficios = () => {
   return (
-    <section className="p-4 lg:flex lg:h-full lg:flex-col lg:px-28 lg:py-7">
+    <SectionFrame className="h-auto lg:flex lg:h-full lg:flex-col">
       <ConoceBanner />
       <div className="row-start-1 mt-8 flex flex-col justify-evenly lg:col-start-1 lg:pb-14">
         <h1 className="font-sifonn text-3xl leading-none text-purple-primary lg:text-4xl">
@@ -53,6 +54,6 @@ export const HeroBeneficios = () => {
           </ul>
         </div>
       </div>
-    </section>
+    </SectionFrame>
   );
 };
