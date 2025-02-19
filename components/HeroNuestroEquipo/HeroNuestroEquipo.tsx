@@ -43,11 +43,11 @@ export const HeroNuestroEquipo = () => {
               className="flex flex-col justify-evenly lg:block lg:w-1/2 lg:px-4"
               key={idx}
             >
-              <h1 className="font-bebas text-2xl leading-none text-purple-light lg:pb-4">
+              <h1 className="pb-4 font-bebas text-2xl leading-none text-purple-light">
                 {el.name}
               </h1>
               {el.bio.map((par, idx) => (
-                <p className="mb-4 text-sm lg:text-base" key={idx}>
+                <p className="mb-4 text-xs lg:text-base" key={idx}>
                   {par}
                 </p>
               ))}

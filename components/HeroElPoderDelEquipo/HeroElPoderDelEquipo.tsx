@@ -3,13 +3,13 @@ import TitleWithLine from "../TitleWithLine/TitleWithLine";
 
 export const HeroElPoderDelEquipo = () => {
   return (
-    <SectionFrame className="flex flex-col lg:grid lg:h-auto lg:grid-cols-2 lg:grid-rows-2">
+    <SectionFrame className="flex h-auto flex-col lg:grid lg:grid-cols-2 lg:grid-rows-2">
       <div className="row-start-1 flex flex-col justify-evenly lg:col-start-1 lg:pb-14">
         <TitleWithLine text="El poder del equipo" className="lg:ml-4" />
       </div>
       <div className="row-span-2 row-start-2 flex flex-col justify-evenly py-2 lg:col-start-1 lg:col-end-3 lg:flex-row lg:justify-center">
-        <div className="flex flex-col justify-evenly text-sm lg:px-4 lg:text-base">
-          <p>
+        <div className="flex flex-col justify-evenly px-4 text-xs lg:text-base">
+          <p className="pb-4">
             La combinación de nuestras disciplinas y enfoques nos permite
             ofrecer un servicio integral y personalizado. Milagros y Albana
             aportan una visión profunda de la conciencia corporal, la
@@ -17,6 +17,8 @@ export const HeroElPoderDelEquipo = () => {
             un cuerpo fuerte y disponible desde una perspectiva consciente.
             Marga suma su empatía, dinamismo y adaptabilidad, generando espacios
             de aprendizaje donde la autopercepción y el disfrute son clave.
+          </p>
+          <p>
             Lautaro complementa con su enfoque técnico y eficiente, basado en su
             experiencia en artes marciales y terapias corporales. Juntos,
             logramos un equilibrio entre flexibilidad, fuerza y autoconciencia,
