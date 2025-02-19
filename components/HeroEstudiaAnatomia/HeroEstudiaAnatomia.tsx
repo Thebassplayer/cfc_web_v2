@@ -1,7 +1,9 @@
+import SectionFrame from "../SectionFrame/SectionFrame";
+
 export const HeroEstudiaAnatomia = () => {
   return (
-    <section className="flex flex-col p-4 lg:grid lg:h-3/4 lg:grid-cols-2 lg:grid-rows-2 lg:px-28 lg:py-14">
-      <div className="row-start-1 flex flex-col justify-evenly pb-8 lg:col-start-1 lg:pb-14">
+    <SectionFrame className="flex h-auto flex-col lg:grid lg:grid-cols-2 lg:grid-rows-2">
+      <div className="row-start-1 flex flex-col justify-evenly pb-8 lg:col-start-1 lg:pb-0">
         <h1 className="font-sifonn text-3xl leading-none text-purple-primary lg:text-4xl">
           “Estudia anatomía y transforma tu conexión cuerpo-mente con CFC
           Conciencia y Flexibilidad Corporal®”
@@ -42,6 +44,6 @@ export const HeroEstudiaAnatomia = () => {
           </p>
         </div>
       </div>
-    </section>
+    </SectionFrame>
   );
 };

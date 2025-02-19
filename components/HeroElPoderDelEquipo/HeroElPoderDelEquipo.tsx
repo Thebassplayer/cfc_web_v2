@@ -1,8 +1,9 @@
+import SectionFrame from "../SectionFrame/SectionFrame";
 import TitleWithLine from "../TitleWithLine/TitleWithLine";
 
 export const HeroElPoderDelEquipo = () => {
   return (
-    <section className="flex flex-col p-4 lg:grid lg:h-2/5 lg:grid-cols-2 lg:grid-rows-2 lg:px-28 lg:py-14">
+    <SectionFrame className="flex flex-col lg:grid lg:h-auto lg:grid-cols-2 lg:grid-rows-2">
       <div className="row-start-1 flex flex-col justify-evenly lg:col-start-1 lg:pb-14">
         <TitleWithLine text="El poder del equipo" className="lg:ml-4" />
       </div>
@@ -27,6 +28,6 @@ export const HeroElPoderDelEquipo = () => {
           </p>
         </div>
       </div>
-    </section>
+    </SectionFrame>
   );
 };

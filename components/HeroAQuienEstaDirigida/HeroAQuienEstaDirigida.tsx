@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import SectionFrame from "../SectionFrame/SectionFrame";
 
 const cards = [
   {
@@ -60,7 +61,7 @@ export const HeroAQuienEstaDirigida = () => {
     );
   };
   return (
-    <section className="flex h-full flex-col bg-grey-light p-4 lg:grid lg:grid-cols-3 lg:grid-rows-5 lg:px-28 lg:py-14">
+    <SectionFrame className="flex flex-col bg-grey-light lg:grid lg:grid-cols-3 lg:grid-rows-5">
       <div className="row-start-1 hidden flex-col text-5xl md:col-start-1 md:flex md:pb-10">
         <h1 className="my-0 font-sifonn  leading-none text-purple-primary">
           ¿A
@@ -156,6 +157,6 @@ export const HeroAQuienEstaDirigida = () => {
           ))}
         </div>
       </div>
-    </section>
+    </SectionFrame>
   );
 };
