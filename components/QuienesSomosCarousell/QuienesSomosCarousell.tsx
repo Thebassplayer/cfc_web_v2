@@ -86,7 +86,7 @@ export const QuienesSomosCarousell = () => {
                 className="h-full object-scale-down"
               />
             </div>
-            <div className="flex h-1/2 w-full flex-col justify-start py-24 lg:h-full lg:w-4/6">
+            <div className="flex h-1/2 w-full flex-col justify-start md:py-24 lg:h-full lg:w-4/6">
               <h2 className="my-4 text-center font-sifonn text-2xl leading-none text-purple-primary lg:mt-0 lg:text-left lg:text-4xl">
                 {staff[currentIndex].name}
               </h2>
@@ -94,7 +94,7 @@ export const QuienesSomosCarousell = () => {
                 {staff[currentIndex].bio.map((paragraph, index) => (
                   <p
                     key={index}
-                    className="mb-4 pr-8 text-justify  text-sm text-white lg:text-base"
+                    className="mb-4 px-4 text-justify text-xs  text-white md:pr-8 lg:text-base"
                   >
                     {paragraph}
                   </p>
