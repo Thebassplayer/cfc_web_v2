@@ -88,8 +88,8 @@ export const HeroAQuienEstaDirigida = () => {
           />
         ))}
       </div>
-      <div className="flex grow flex-col items-center justify-between lg:hidden">
-        <div className="relative grow">
+      <div className="flex min-h-0 flex-1 flex-col items-center justify-between lg:hidden">
+        <div className="relative grow overflow-y-hidden">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
@@ -109,10 +109,10 @@ export const HeroAQuienEstaDirigida = () => {
                 />
                 <div className="flex grow flex-col justify-between">
                   <div className="flex grow flex-col justify-between">
-                    <h2 className="pb-2 font-bebas text-lg leading-none text-purple-light lg:text-2xl">
+                    <h2 className="pb-2 font-bebas text-2xl leading-none text-purple-light lg:text-2xl">
                       {cards[currentIndex].title}
                     </h2>
-                    <p className="overflow-y-auto pb-2 text-xs lg:text-sm">
+                    <p className="max-h-24 overflow-y-scroll pb-2 text-xs lg:text-sm">
                       {cards[currentIndex].text}
                     </p>
                   </div>
