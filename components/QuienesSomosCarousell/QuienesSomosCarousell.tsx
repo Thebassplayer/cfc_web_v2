@@ -86,7 +86,7 @@ export const QuienesSomosCarousell = () => {
                 className="h-full object-scale-down"
               />
             </div>
-            <div className="flex h-1/2 w-full flex-col justify-start pb-8 lg:w-4/6">
+            <div className="flex h-1/2 w-full flex-col justify-start py-24 lg:h-full lg:w-4/6">
               <h2 className="my-4 text-center font-sifonn text-2xl leading-none text-purple-primary lg:mt-0 lg:text-left lg:text-4xl">
                 {staff[currentIndex].name}
               </h2>
@@ -118,7 +118,7 @@ export const QuienesSomosCarousell = () => {
           <ChevronRight size={24} />
         </button>
       </div>
-      <div className="mt-8 flex justify-center space-x-2">
+      <div className="my-4 flex justify-center space-x-2">
         {staff.map((_, index) => (
           <button
             key={index}

@@ -150,7 +150,7 @@ const TestimonialsCarousell = () => {
           <ChevronRight size={24} />
         </button>
       </div>
-      <div className="mt-8 flex justify-center space-x-2">
+      <div className="flex justify-center space-x-2 py-4">
         {testimonies.map((_, index) => (
           <button
             key={index}
