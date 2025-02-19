@@ -1,5 +1,5 @@
 import PortadaDesktop from "@/assets/portada_desktop.png";
-import PortadaMovile from "@/assets/fondo-hero1-mobile.png";
+import PortadaMovile from "@/assets/portada_mobile.png";
 import Image from "next/image";
 import ContactButton from "../ContactButton/ContactButton";
 

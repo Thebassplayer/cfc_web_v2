@@ -5,8 +5,8 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-import Mili from "../../assets/mili_2.jpeg";
-import Albu from "../../assets/albu.jpg";
+import Mili from "../../assets/mili.png";
+import Albu from "../../assets/albana.png";
 const staff = [
   {
     id: 1,
