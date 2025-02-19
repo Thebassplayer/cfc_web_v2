@@ -7,8 +7,8 @@ import Whatsapp from "../../assets/whatsapp.png";
 import Youtube from "../../assets/youtube.png";
 import BsAs from "../../assets/Group18.png";
 import ContactButton from "../ContactButton/ContactButton";
-import WhatsappButton from "../WhatsappButton/WhatsappButton";
 import Link from "next/link";
+import WhatsappButton from "../WhatsappButton/WhatsappButton";
 
 if (!process.env.NEXT_PUBLIC_PHONE_NUMBER) {
   throw new Error("NEXT_PUBLIC_PHONE_NUMBER is not defined");
@@ -41,13 +41,19 @@ export const Footer = () => {
               </WhatsappButton>
               <WhatsappButton>
                 <div className="flex items-center justify-center">
-                  <Image
-                    src={Whatsapp}
-                    alt={phoneNumber}
-                    width="35"
-                    height="35"
-                    className="mx-auto hover:scale-110"
-                  />
+                  <Link
+                    href="https://wa.me/5491131631727"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      src={Whatsapp}
+                      alt={phoneNumber}
+                      width="35"
+                      height="35"
+                      className="mx-auto hover:scale-110"
+                    />
+                  </Link>
                 </div>
               </WhatsappButton>
             </div>
