@@ -52,20 +52,24 @@ export const Footer = () => {
               </WhatsappButton>
             </div>
             <div className="mb-4 flex items-center justify-between">
-              <div>
-                <h6 className="font-bebas text-lg">
-                  e-mail <br />
-                  <small className="text-gray-500">{contactEmail}</small>
-                </h6>
-              </div>
+              <Link href={"?search-modal=true"}>
+                <div>
+                  <h6 className="font-bebas text-lg">
+                    e-mail <br />
+                    <small className="text-gray-500">{contactEmail}</small>
+                  </h6>
+                </div>
+              </Link>
               <div className="flex items-center justify-center">
-                <Image
-                  src={Email}
-                  alt={contactEmail}
-                  width="35"
-                  height="30"
-                  className="mx-auto hover:scale-110"
-                />
+                <Link href={"?search-modal=true"}>
+                  <Image
+                    src={Email}
+                    alt={contactEmail}
+                    width="35"
+                    height="30"
+                    className="mx-auto hover:scale-110"
+                  />
+                </Link>
               </div>
             </div>
             <div className="flex flex-col items-center">
