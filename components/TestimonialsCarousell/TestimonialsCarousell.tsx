@@ -142,7 +142,7 @@ const TestimonialsCarousell = () => {
             animate="center"
             exit="exit"
             transition={{ duration: 0.5 }}
-            className="lg:flex"
+            className="mx-12 lg:mx-0 lg:flex"
           >
             <div className="w-full lg:w-1/2">
               <Image
