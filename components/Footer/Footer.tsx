@@ -8,6 +8,7 @@ import Youtube from "../../assets/youtube.png";
 import BsAs from "../../assets/Group18.png";
 import ContactButton from "../ContactButton/ContactButton";
 import WhatsappButton from "../WhatsappButton/WhatsappButton";
+import Link from "next/link";
 
 if (!process.env.NEXT_PUBLIC_PHONE_NUMBER) {
   throw new Error("NEXT_PUBLIC_PHONE_NUMBER is not defined");
@@ -45,7 +46,7 @@ export const Footer = () => {
                     alt={phoneNumber}
                     width="35"
                     height="35"
-                    className="mx-auto"
+                    className="mx-auto hover:scale-110"
                   />
                 </div>
               </WhatsappButton>
@@ -63,7 +64,7 @@ export const Footer = () => {
                   alt={contactEmail}
                   width="35"
                   height="30"
-                  className="mx-auto"
+                  className="mx-auto hover:scale-110"
                 />
               </div>
             </div>
@@ -82,22 +83,27 @@ export const Footer = () => {
                 alt="YouTube"
                 width="50"
                 height="40"
-                className="mx-auto"
+                className="mx-auto hover:scale-110"
               />
               <Image
                 src={Facebook}
                 alt="Facebook"
                 width="40"
                 height="40"
-                className="mx-auto"
+                className="mx-auto hover:scale-110"
               />
-              <Image
-                src={Instagram}
-                alt="Instagram"
-                width="40"
-                height="40"
-                className="mx-auto"
-              />
+              <Link
+                href={"https://www.instagram.com/cfc.metodo/"}
+                target="_blank"
+              >
+                <Image
+                  src={Instagram}
+                  alt="Instagram"
+                  width="40"
+                  height="40"
+                  className="mx-auto hover:scale-110"
+                />
+              </Link>
             </div>
             <div className="text-center">
               <h4 className="my-4 text-gray-500">
