@@ -12,7 +12,7 @@ import MariaCeciliaMaldonado from "../../assets/testimonies/mariaceciliamaldonad
 import MariaPodesta from "../../assets/testimonies/mariapodesta.webp";
 import NataliaWolf from "../../assets/testimonies/nataliawolf.webp";
 import PiaDelBono from "../../assets/testimonies/piadelbono.webp";
-import DiegoDeLuca from "../../assets/testimonies/diegodeluca.jpeg";
+import DiegoDeLuca from "../../assets/testimonies/diegoDeluca.jpeg";
 import DaianaMontenegro from "../../assets/testimonies/daianaMontenegro.jpeg";
 import InesBarros from "../../assets/testimonies/inesBarros.jpeg";
 
