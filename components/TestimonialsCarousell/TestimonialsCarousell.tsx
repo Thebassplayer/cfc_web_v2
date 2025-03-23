@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-import ClaudiaRucci from "../../assets/testimonies/claudiaRucci.webp";
+import ClaudiaRucci from "../../assets/testimonies/claudiaRucci.jpeg";
 import DanielaManfredi from "../../assets/testimonies/danielamanfredi.webp";
 import JuanIgnacioSuardi from "../../assets/testimonies/juanignaciosuardi.webp";
 import MariaCeciliaMaldonado from "../../assets/testimonies/mariaceciliamaldonado.webp";
@@ -121,21 +121,24 @@ const TestimonialsCarousell = () => {
               <Image
                 src={testimonies[currentIndex].img || "/placeholder.svg"}
                 alt={testimonies[currentIndex].name}
-                className="w-full object-scale-down"
+                className="w-full rounded-sm object-scale-down"
               />
             </div>
-            <div className="flex w-full flex-col justify-end pb-8 lg:w-1/2 lg:pl-8">
+            <div className="flex w-full flex-col justify-end lg:w-1/2 lg:justify-center lg:px-8 lg:pb-8">
               <h2 className="my-4 font-sifonn text-2xl leading-none text-purple-primary lg:mt-0">
                 {testimonies[currentIndex].name}
               </h2>
               <p className="mb-4 font-sifonn text-xl leading-none text-purple-primary">
                 {testimonies[currentIndex].age} años
               </p>
-              <p>{testimonies[currentIndex].testimony}</p>
+              <p className="h-24 overflow-y-auto pr-2 text-xs lg:max-h-full lg:text-base">
+                {testimonies[currentIndex].testimony}
+              </p>
             </div>
           </motion.div>
         </AnimatePresence>
         <button
+          type="button"
           onClick={prevTestimonial}
           className="absolute left-0 top-1/2 -translate-y-1/2 transform rounded-full bg-purple-primary p-2 text-white transition-transform hover:scale-105 active:scale-100"
           aria-label="Previous testimonial"
@@ -143,6 +146,7 @@ const TestimonialsCarousell = () => {
           <ChevronLeft size={24} />
         </button>
         <button
+          type="button"
           onClick={nextTestimonial}
           className="absolute right-0 top-1/2 -translate-y-1/2 transform rounded-full bg-purple-primary p-2 text-white transition-transform hover:scale-105 active:scale-100"
           aria-label="Next testimonial"
@@ -153,6 +157,7 @@ const TestimonialsCarousell = () => {
       <div className="mt-8 flex justify-center space-x-2">
         {testimonies.map((_, index) => (
           <button
+            type="button"
             key={index}
             onClick={() => setCurrentIndex(index)}
             className={`h-3 w-3 rounded-full ${
