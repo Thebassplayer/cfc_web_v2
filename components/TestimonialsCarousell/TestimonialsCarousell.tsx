@@ -5,13 +5,16 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-import ClaudiaRucci from "../../assets/testimonies/claudiaRucci.webp";
+import ClaudiaRucci from "../../assets/testimonies/claudiaRucci.jpeg";
 import DanielaManfredi from "../../assets/testimonies/danielamanfredi.webp";
 import JuanIgnacioSuardi from "../../assets/testimonies/juanignaciosuardi.webp";
 import MariaCeciliaMaldonado from "../../assets/testimonies/mariaceciliamaldonado.webp";
 import MariaPodesta from "../../assets/testimonies/mariapodesta.webp";
 import NataliaWolf from "../../assets/testimonies/nataliawolf.webp";
 import PiaDelBono from "../../assets/testimonies/piadelbono.webp";
+import DiegoDeLuca from "../../assets/testimonies/diegoDeLuca.jpeg";
+import DaianaMontenegro from "../../assets/testimonies/daianaMontenegro.jpeg";
+import InesBarros from "../../assets/testimonies/inesBarros.jpeg";
 
 const testimonies = [
   {
@@ -70,6 +73,30 @@ const testimonies = [
     testimony:
       "Entrenar Conciencia y Flexibilidad Corporal no es sólo una práctica en sí misma, sino también un gran soporte y complemento de mi profesión y de mi vida. En su guía paso a paso y logre posturas que creía imposibles.",
   },
+  {
+    id: 8,
+    img: DiegoDeLuca,
+    name: "Diego De Luca",
+    age: 37,
+    testimony:
+      "Luego de varias lesiones, hace ya mas de un año que encontré en el método CFC y su equipo el acompañamiento que buscaba, no solo para recuperar la seguridad y confianza en mi cuerpo, sino también, para expandir la libertad de movimiento, aumentar mi fuerza y flexibilidad.",
+  },
+  {
+    id: 9,
+    img: DaianaMontenegro,
+    name: "Daiana Montenegro",
+    age: 24,
+    testimony:
+      "El primer año de formación en CFC me acompañó en mi camino de autoconocimiento. Aprendí sobre la composición y el funcionamiento de nuestro cuerpo. Comprenderme me ayudó a ser más consciente de mis movimientos, lo que potenció mis prácticas al punto de sorprenderme con lo que estaba habilitando y logrando. CFC me brindó herramientas para conectar conmigo misma y elegir lo que me hace bien: sentirme segura al moverme y al guiar a otros, priorizar mis entrenamientos, mis descansos, mi alimentación y mis cuidados, entre muchas otras cosas del día a día.¿Podríamos decir que CFC es un estilo de vida? ¡Sí, podemos!.¡CFC es una experiencia completa y poderosa!",
+  },
+  {
+    id: 10,
+    img: InesBarros,
+    name: "Ines Barros",
+    age: 24,
+    testimony:
+      "Practicar CONCIENCIA, FUERZA y FLEXIBILIDAD CORPORAL es registrar lo que me ocurre aquí y ahora. Me invita a detenerme, escuchar cómo me siento dentro de mi cuerpo y revisar lo que luego se proyecta hacia afuera, en mi modo de ESTAR. Me propone adentrarme poco a poco en mi cuerpo y, en cada ejercicio, postura o secuencia, encontrar el punto justo entre desafiarme sin romperme y soltarme sin rendirme.",
+  },
 ];
 
 const variants = {
@@ -115,29 +142,30 @@ const TestimonialsCarousell = () => {
             animate="center"
             exit="exit"
             transition={{ duration: 0.5 }}
-            className="lg:flex"
+            className="mx-12 lg:mx-0 lg:flex"
           >
             <div className="w-full lg:w-1/2">
               <Image
                 src={testimonies[currentIndex].img || "/placeholder.svg"}
                 alt={testimonies[currentIndex].name}
-                className="w-full object-scale-down"
+                className="w-full rounded-sm object-scale-down"
               />
             </div>
-            <div className="flex w-full flex-col justify-end pb-8 lg:w-1/2 lg:pl-8">
+            <div className="flex w-full flex-col justify-end lg:w-1/2 lg:justify-center lg:px-8 lg:pb-8">
               <h2 className="my-4 font-sifonn text-2xl leading-none text-purple-primary lg:mt-0">
                 {testimonies[currentIndex].name}
               </h2>
               <p className="mb-4 font-sifonn text-xl leading-none text-purple-primary">
                 {testimonies[currentIndex].age} años
               </p>
-              <p className="text-xs md:text-base">
+              <p className="h-24 overflow-y-auto pr-2 text-xs lg:max-h-full lg:text-base">
                 {testimonies[currentIndex].testimony}
               </p>
             </div>
           </motion.div>
         </AnimatePresence>
         <button
+          type="button"
           onClick={prevTestimonial}
           className="absolute left-0 top-1/2 -translate-y-1/2 transform rounded-full bg-purple-primary p-2 text-white transition-transform hover:scale-105 active:scale-100"
           aria-label="Previous testimonial"
@@ -145,6 +173,7 @@ const TestimonialsCarousell = () => {
           <ChevronLeft size={24} />
         </button>
         <button
+          type="button"
           onClick={nextTestimonial}
           className="absolute right-0 top-1/2 -translate-y-1/2 transform rounded-full bg-purple-primary p-2 text-white transition-transform hover:scale-105 active:scale-100"
           aria-label="Next testimonial"
@@ -155,6 +184,7 @@ const TestimonialsCarousell = () => {
       <div className="flex justify-center space-x-2 py-4">
         {testimonies.map((_, index) => (
           <button
+            type="button"
             key={index}
             onClick={() => setCurrentIndex(index)}
             className={`h-3 w-3 rounded-full ${

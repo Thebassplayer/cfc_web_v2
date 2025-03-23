@@ -7,7 +7,20 @@ import Whatsapp from "../../assets/whatsapp.png";
 import Youtube from "../../assets/youtube.png";
 import BsAs from "../../assets/Group18.png";
 import ContactButton from "../ContactButton/ContactButton";
+
 import Link from "next/link";
+import WhatsappButton from "../WhatsappButton/WhatsappButton";
+
+if (!process.env.NEXT_PUBLIC_PHONE_NUMBER) {
+  throw new Error("NEXT_PUBLIC_PHONE_NUMBER is not defined");
+}
+if (!process.env.NEXT_PUBLIC_CONTACT_EMAIL) {
+  throw new Error("NEXT_PUBLIC_CONTACT_EMAIL is not defined");
+}
+
+const phoneNumber = process.env.NEXT_PUBLIC_PHONE_NUMBER;
+const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL;
+
 export const Footer = () => {
   return (
     <footer className="bg-gray-100">
@@ -19,43 +32,43 @@ export const Footer = () => {
               CONTACTANOS
             </h1>
             <div className="mb-4 flex items-center justify-between">
-              <div>
-                <h6 className="font-bebas text-lg">
-                  whatsapp <br />
-                  <small className="text-gray-500">+54 9 11 3163 1727</small>
-                </h6>
-              </div>
-              <div className="flex items-center justify-center">
-                <Link
-                  href="https://wa.me/5491131631727"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+              <WhatsappButton>
+                <div>
+                  <h6 className="font-bebas text-lg">
+                    whatsapp <br />
+                    <small className="text-gray-500">{phoneNumber}</small>
+                  </h6>
+                </div>
+              </WhatsappButton>
+              <WhatsappButton>
+                <div className="flex items-center justify-center">
                   <Image
                     src={Whatsapp}
-                    alt="+54 9 11 3163 1727"
+                    alt={phoneNumber}
                     width="35"
                     height="35"
-                    className="mx-auto"
+                    className="mx-auto hover:scale-110"
                   />
-                </Link>
-              </div>
+                </div>
+              </WhatsappButton>
             </div>
             <div className="mb-4 flex items-center justify-between">
-              <div>
-                <h6 className="font-bebas text-lg">
-                  e-mail <br />
-                  <small className="text-gray-500">info@cfcmethod.com</small>
-                </h6>
-              </div>
+              <Link href={"?search-modal=true"}>
+                <div>
+                  <h6 className="font-bebas text-lg">
+                    e-mail <br />
+                    <small className="text-gray-500">{contactEmail}</small>
+                  </h6>
+                </div>
+              </Link>
               <div className="flex items-center justify-center">
-                <Link href="mailto:info@cfcmethod.com">
+                <Link href={"?search-modal=true"}>
                   <Image
                     src={Email}
-                    alt="info@cfcmethod.com"
+                    alt={contactEmail}
                     width="35"
                     height="30"
-                    className="mx-auto"
+                    className="mx-auto hover:scale-110"
                   />
                 </Link>
               </div>
@@ -75,17 +88,17 @@ export const Footer = () => {
                 alt="YouTube"
                 width="50"
                 height="40"
-                className="mx-auto"
+                className="mx-auto hover:scale-110"
               />
               <Image
                 src={Facebook}
                 alt="Facebook"
                 width="40"
                 height="40"
-                className="mx-auto"
+                className="mx-auto hover:scale-110"
               />
               <Link
-                href={"https://www.instagram.com/cfc.metodo"}
+                href={"https://www.instagram.com/cfc.metodo/"}
                 target="_blank"
               >
                 <Image
@@ -93,7 +106,7 @@ export const Footer = () => {
                   alt="Instagram"
                   width="40"
                   height="40"
-                  className="mx-auto"
+                  className="mx-auto hover:scale-110"
                 />
               </Link>
             </div>
