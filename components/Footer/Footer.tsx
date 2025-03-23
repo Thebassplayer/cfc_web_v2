@@ -7,6 +7,13 @@ import Whatsapp from "../../assets/whatsapp.png";
 import Youtube from "../../assets/youtube.png";
 import BsAs from "../../assets/Group18.png";
 import ContactButton from "../ContactButton/ContactButton";
+
+if (!process.env.NEXT_PUBLIC_PHONE_NUMBER) {
+  throw new Error("NEXT_PUBLIC_CONTACT_API is not defined");
+}
+
+const phoneNumber = process.env.NEXT_PUBLIC_PHONE_NUMBER;
+
 export const Footer = () => {
   return (
     <footer className="bg-gray-100">
@@ -21,13 +28,13 @@ export const Footer = () => {
               <div>
                 <h6 className="font-bebas text-lg">
                   whatsapp <br />
-                  <small className="text-gray-500">+54 9 11 3163 1727</small>
+                  <small className="text-gray-500">{phoneNumber}</small>
                 </h6>
               </div>
               <div className="flex items-center justify-center">
                 <Image
                   src={Whatsapp}
-                  alt="+54 9 11 3163 1727"
+                  alt={phoneNumber}
                   width="35"
                   height="35"
                   className="mx-auto"
