@@ -42,19 +42,13 @@ export const Footer = () => {
               </WhatsappButton>
               <WhatsappButton>
                 <div className="flex items-center justify-center">
-                  <Link
-                    href="https://wa.me/5491131631727"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Image
-                      src={Whatsapp}
-                      alt={phoneNumber}
-                      width="35"
-                      height="35"
-                      className="mx-auto hover:scale-110"
-                    />
-                  </Link>
+                  <Image
+                    src={Whatsapp}
+                    alt={phoneNumber}
+                    width="35"
+                    height="35"
+                    className="mx-auto hover:scale-110"
+                  />
                 </div>
               </WhatsappButton>
             </div>
