@@ -3,7 +3,7 @@ import SectionFrame from "../SectionFrame/SectionFrame";
 
 export const HeroBeneficios = () => {
   return (
-    <SectionFrame className="h-auto lg:flex lg:h-full lg:flex-col">
+    <SectionFrame className="h-auto lg:flex lg:flex-col">
       <ConoceBanner />
       <div className="row-start-1 mt-8 flex flex-col justify-evenly lg:col-start-1 lg:pb-14">
         <h1 className="font-sifonn text-3xl leading-none text-purple-primary lg:text-4xl">
