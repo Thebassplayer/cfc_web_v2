@@ -25,12 +25,20 @@ export const Footer = () => {
   return (
     <footer className="bg-gray-100">
       <section className="mx-auto max-w-screen-xl px-4 py-5">
+        <div>
+          <h1 className="text-center font-bebas text-2xl font-semibold lg:text-4xl">
+            CONTACTANOS
+          </h1>
+          <div className="flex flex-col items-center">
+            <h6 className="my-3 text-center font-bebas text-gray-500 lg:text-xl">
+              Déjanos tus datos para que recibir más información
+            </h6>
+            <ContactButton text="Quiero saber mas" />
+          </div>
+        </div>
         <div className="mb-5 flex flex-col items-center justify-around pt-1 md:flex-row md:pt-5">
           {/* Contact Section (Right on Desktop, First on Mobile) */}
           <div className="order-1 w-full px-12 pt-4 md:order-2 md:w-1/2">
-            <h1 className="mb-4 text-center font-bebas text-lg font-semibold">
-              CONTACTANOS
-            </h1>
             <div className="mb-4 flex items-center justify-between">
               <WhatsappButton>
                 <div>
@@ -73,12 +81,6 @@ export const Footer = () => {
                 </Link>
               </div>
             </div>
-            <div className="flex flex-col items-center">
-              <h6 className="mt-3 text-center font-bebas text-gray-500">
-                Déjanos tus datos para que recibir más información
-              </h6>
-              <ContactButton text="Quiero saber mas" />
-            </div>
           </div>
           {/* Social & Branding Section (Left on Desktop, Second on Mobile) */}
           <div className="order-2 w-full px-4 pt-5 md:order-1 md:w-1/2 md:pt-4">
@@ -112,7 +114,7 @@ export const Footer = () => {
             </div>
             <div className="text-center">
               <h4 className="my-4 text-gray-500">
-                conciencia y flexibilidad corporal ®
+                CFC conciencia y flexibilidad corporal ®
               </h4>
               <Image
                 src={BsAs}
