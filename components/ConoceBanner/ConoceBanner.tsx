@@ -5,7 +5,7 @@ import ContactButton from "../ContactButton/ContactButton";
 
 const ConoceBanner = () => {
   return (
-    <div className="relative flex h-[800px] items-center justify-center overflow-hidden">
+    <div className="relative flex h-[600px] items-center justify-center overflow-hidden">
       <Image
         src={ConoceYExpandeTuFuerza}
         alt="Mujer en Flecha"
