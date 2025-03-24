@@ -61,7 +61,7 @@ export const HeroAQuienEstaDirigida = () => {
     );
   };
   return (
-    <SectionFrame className="flex flex-col bg-grey-light lg:grid lg:grid-cols-3 lg:grid-rows-5">
+    <SectionFrame className="flex h-auto flex-col bg-grey-light lg:grid lg:grid-cols-3 lg:grid-rows-5">
       <div className="row-start-1 hidden flex-col text-5xl md:col-start-1 md:flex md:pb-10">
         <h1 className="my-0 font-sifonn leading-none text-purple-primary">
           ¿A
@@ -89,7 +89,7 @@ export const HeroAQuienEstaDirigida = () => {
         ))}
       </div>
       <div className="flex min-h-0 flex-1 flex-col items-center justify-between lg:hidden">
-        <div className="relative grow overflow-y-hidden">
+        <div className="relative grow overflow-hidden">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
@@ -109,7 +109,7 @@ export const HeroAQuienEstaDirigida = () => {
                 />
                 <div className="flex grow flex-col justify-between">
                   <div className="flex grow flex-col justify-between">
-                    <h2 className="pb-2 font-bebas text-2xl leading-none text-purple-light lg:text-2xl">
+                    <h2 className="h-20 pb-2 font-bebas text-2xl leading-none text-purple-light lg:text-2xl">
                       {cards[currentIndex].title}
                     </h2>
                     <p className="max-h-24 overflow-y-scroll pb-2 text-xs lg:text-sm">
