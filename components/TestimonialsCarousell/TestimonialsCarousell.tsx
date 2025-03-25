@@ -124,7 +124,7 @@ const TestimonialsCarousell = () => {
               <Image
                 src={testimonies[currentIndex].img || "/placeholder.svg"}
                 alt={testimonies[currentIndex].name}
-                className="w-full rounded-sm object-scale-down"
+                className="mx-auto rounded-2xl object-cover shadow-md shadow-black lg:w-3/4"
               />
             </div>
             <div className="flex w-full flex-col justify-end lg:w-1/2 lg:justify-center lg:px-8 lg:pb-8">
