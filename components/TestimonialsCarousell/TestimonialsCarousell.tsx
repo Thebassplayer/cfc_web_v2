@@ -27,6 +27,14 @@ const testimonies = [
   },
   {
     id: 2,
+    img: MariaCeciliaMaldonado,
+    name: "Maria Cecilia Maldonado",
+    role: "Profesora Egresada de CFC",
+    testimony:
+      "Practico CFC desde 2017. Comencé para aliviar mis dolores de espalda, pero el camino evolucionó por completo. Las clases se convirtieron en una vía de conocimiento y conexión profunda con mi cuerpo y mi alma. CFC me hizo consciente de que, si escuchamos al cuerpo, siempre tiene las respuestas.Soy profesora de canto y el cuerpo es un aliado fundamental para guiar a mis alumnos. Por eso, el año pasado decidí hacer el primer año de la formación, para aportar más conocimiento a mis clases. No solo enriqueció mi enseñanza en el canto, sino que también despertó en mí el deseo de brindar clases de CFC y compartir sus beneficios con más personas. En resumen, ¡practicá CFC, que te cambia la vida!",
+  },
+  {
+    id: 3,
     img: DanielaManfredi,
     name: "Daniela Manfredi",
     role: "Alumna",
@@ -34,7 +42,15 @@ const testimonies = [
       "Hace 5 años me adentré en esta experiencia de habitar mi propio cuerpo. Registrar los procesos que me llevan a explorar distintos movimientos, siendo consciente de mis propias barreras, limitaciones y fortalezas.Y descubrir así la importancia de tener CONCIENCIA CORPORAL. ♡",
   },
   {
-    id: 3,
+    id: 4,
+    img: DaianaMontenegro,
+    name: "Daiana Montenegro",
+    role: "Profesora Egresada de CFC",
+    testimony:
+      "El primer año de formación en CFC me acompañó en mi camino de autoconocimiento. Aprendí sobre la composición y el funcionamiento de nuestro cuerpo. Comprenderme me ayudó a ser más consciente de mis movimientos, lo que potenció mis prácticas al punto de sorprenderme con lo que estaba habilitando y logrando. CFC me brindó herramientas para conectar conmigo misma y elegir lo que me hace bien: sentirme segura al moverme y al guiar a otros, priorizar mis entrenamientos, mis descansos, mi alimentación y mis cuidados, entre muchas otras cosas del día a día.¿Podríamos decir que CFC es un estilo de vida? ¡Sí, podemos!.¡CFC es una experiencia completa y poderosa!",
+  },
+  {
+    id: 5,
     img: PiaDelBono,
     name: "Pia Del Bono",
     role: "Alumna",
@@ -42,36 +58,20 @@ const testimonies = [
       "Empecé a entrenar hace un año y medio. Llevaba más de 10 sin hacer actividad física, tiempo en el que había perdido toda la movilidad y flexibilidad. Cuando inicié este recorrido jamás imaginé que cada clase iba a representar un avance, que -a su vez- me iba a permitir entender mi cuerpo, concientizarlo y expandirlo para seguir avanzando.",
   },
   {
-    id: 4,
-    img: MariaCeciliaMaldonado,
-    name: "Maria Cecilia Maldonado",
-    role: "Alumna",
+    id: 6,
+    img: InesBarros,
+    name: "Ines Barros",
+    role: "Profesora Egresada de CFC",
     testimony:
-      "Entrenar Conciencia y Flexibilidad Corporal no es sólo una práctica en sí misma, sino también un gran soporte y complemento de mi profesión y de mi vida. En su guía paso a paso y logre posturas que creía imposibles.",
+      "Practicar CONCIENCIA, FUERZA y FLEXIBILIDAD CORPORAL es registrar lo que me ocurre aquí y ahora. Me invita a detenerme, escuchar cómo me siento dentro de mi cuerpo y revisar lo que luego se proyecta hacia afuera, en mi modo de ESTAR. Me propone adentrarme poco a poco en mi cuerpo y, en cada ejercicio, postura o secuencia, encontrar el punto justo entre desafiarme sin romperme y soltarme sin rendirme.",
   },
   {
-    id: 5,
+    id: 7,
     img: DiegoDeLuca,
     name: "Diego De Luca",
     role: "Alumno",
     testimony:
       "Luego de varias lesiones, hace ya mas de un año que encontré en el método CFC y su equipo el acompañamiento que buscaba, no solo para recuperar la seguridad y confianza en mi cuerpo, sino también, para expandir la libertad de movimiento, aumentar mi fuerza y flexibilidad.",
-  },
-  {
-    id: 6,
-    img: DaianaMontenegro,
-    name: "Daiana Montenegro",
-    role: "Profesora Egresada CFC",
-    testimony:
-      "El primer año de formación en CFC me acompañó en mi camino de autoconocimiento. Aprendí sobre la composición y el funcionamiento de nuestro cuerpo. Comprenderme me ayudó a ser más consciente de mis movimientos, lo que potenció mis prácticas al punto de sorprenderme con lo que estaba habilitando y logrando. CFC me brindó herramientas para conectar conmigo misma y elegir lo que me hace bien: sentirme segura al moverme y al guiar a otros, priorizar mis entrenamientos, mis descansos, mi alimentación y mis cuidados, entre muchas otras cosas del día a día.¿Podríamos decir que CFC es un estilo de vida? ¡Sí, podemos!.¡CFC es una experiencia completa y poderosa!",
-  },
-  {
-    id: 7,
-    img: InesBarros,
-    name: "Ines Barros",
-    role: "Profesora Egresada CFC",
-    testimony:
-      "Practicar CONCIENCIA, FUERZA y FLEXIBILIDAD CORPORAL es registrar lo que me ocurre aquí y ahora. Me invita a detenerme, escuchar cómo me siento dentro de mi cuerpo y revisar lo que luego se proyecta hacia afuera, en mi modo de ESTAR. Me propone adentrarme poco a poco en mi cuerpo y, en cada ejercicio, postura o secuencia, encontrar el punto justo entre desafiarme sin romperme y soltarme sin rendirme.",
   },
 ];
 
