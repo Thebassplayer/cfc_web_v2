@@ -114,7 +114,7 @@ export const Footer = () => {
             </div>
             <div className="text-center">
               <h4 className="my-4 text-gray-500">
-                CFC conciencia y flexibilidad corporal ®
+                CFC Conciencia y Flexibilidad Corporal ®
               </h4>
               <Image
                 src={BsAs}
