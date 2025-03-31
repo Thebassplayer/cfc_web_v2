@@ -21,7 +21,7 @@ const testimonies = [
     id: 1,
     img: ClaudiaRucci,
     name: "Claudia Rucci",
-    role: "Alumna",
+    role: "Practicante",
     testimony:
       "Mi práctica de Ashtanga Yoga ha crecido en fuerza y flexibilidad, además de alcanzar posturas como el paro de manos con facilidad y confianza. Súper profesional y cuidada su enseñanza, una guía clave para crear conciencia y hacer crecer la inteligencia del cuerpo.",
   },
@@ -37,7 +37,7 @@ const testimonies = [
     id: 3,
     img: DanielaManfredi,
     name: "Daniela Manfredi",
-    role: "Alumna",
+    role: "Practicante",
     testimony:
       "Hace 5 años me adentré en esta experiencia de habitar mi propio cuerpo. Registrar los procesos que me llevan a explorar distintos movimientos, siendo consciente de mis propias barreras, limitaciones y fortalezas.Y descubrir así la importancia de tener CONCIENCIA CORPORAL. ♡",
   },
@@ -53,7 +53,7 @@ const testimonies = [
     id: 5,
     img: PiaDelBono,
     name: "Pia Del Bono",
-    role: "Alumna",
+    role: "Practicante",
     testimony:
       "Empecé a entrenar hace un año y medio. Llevaba más de 10 sin hacer actividad física, tiempo en el que había perdido toda la movilidad y flexibilidad. Cuando inicié este recorrido jamás imaginé que cada clase iba a representar un avance, que -a su vez- me iba a permitir entender mi cuerpo, concientizarlo y expandirlo para seguir avanzando.",
   },
@@ -69,7 +69,7 @@ const testimonies = [
     id: 7,
     img: DiegoDeLuca,
     name: "Diego De Luca",
-    role: "Alumno",
+    role: "Practicante",
     testimony:
       "Luego de varias lesiones, hace ya mas de un año que encontré en el método CFC y su equipo el acompañamiento que buscaba, no solo para recuperar la seguridad y confianza en mi cuerpo, sino también, para expandir la libertad de movimiento, aumentar mi fuerza y flexibilidad.",
   },
